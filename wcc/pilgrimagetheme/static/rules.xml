@@ -28,6 +28,23 @@
     <!--<drop css:content="#parent-fieldname-description" />
     <drop css:content=".documentFirstHeading" />-->
     
+    <!-- search -->
+    <replace css:theme-children="#main-search">
+        <form class="searchform"><xsl:attribute name="action">
+            <xsl:value-of select="//*[@id='portal-searchbox']/form/@action"/></xsl:attribute>
+            <div class="row collapse">
+                <div class="small-9 columns">
+                    <xsl:copy-of css:select="#portal-searchbox input[name='SearchableText']"/>
+                </div>
+                <div class="small-3 columns">
+                    <button type="submit" style="padding: 10px;">Go</button>
+                </div>
+                <br /><br /><br />
+                <xsl:copy-of css:select="#LSResult"/>
+            </div>
+        </form>
+    </replace>
+    
     <!--replace theme content-->
     <replace css:theme-children=".content" css:content-children="#portal-column-content"/>
     <replace css:theme-children="#sidebar-left" css:content-children="#portal-column-one"/>
