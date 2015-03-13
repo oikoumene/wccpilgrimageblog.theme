@@ -25,12 +25,8 @@
     <replace css:theme-children=".theme_button" css:content-children="#portal-globalnav"/>
     
     <!--drop from content-->
-    <drop css:content="#parent-fieldname-description" />
-    <drop css:content=".documentFirstHeading" />
-    <!--pagetitle-->
-    <replace css:theme-children="#page_title h1">
-        <xsl:value-of css:select=".documentFirstHeading"/>
-    </replace>
+    <!--<drop css:content="#parent-fieldname-description" />
+    <drop css:content=".documentFirstHeading" />-->
     
     <!--replace theme content-->
     <replace css:theme-children=".content" css:content-children="#portal-column-content"/>
