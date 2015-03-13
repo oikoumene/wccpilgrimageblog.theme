@@ -6076,6 +6076,17 @@ th.hide-for-touch {
     display: table-cell !important; }
  }
 
+#personal_tool {
+  position: absolute;
+  right: 5%;
+  z-index: 200; }
+  #personal_tool a {
+    color: #fff; }
+  #personal_tool ul {
+    margin-left: 0;
+    list-style: none;
+    font-size: 14px; }
+
 /*main header*/
 #main-header {
   background: url(../images/bg-header.png) top center repeat-x #fff;

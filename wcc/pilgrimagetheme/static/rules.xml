@@ -19,6 +19,13 @@
     <!--logo-->
     <replace css:theme-children="#sitename" css:content="#portal-logo"/>
     
+    <!--login-->
+    <before css:theme="header#main-header" css:if-content="#portal-personaltools-wrapper">
+        <section id="personal_tool">
+            <xsl:copy-of css:select="#portal-personaltools"/>
+        </section>
+    </before>
+    
     <!--main menu-->
     <replace css:theme-children="#main-menu ul" css:content-children="#portal-globalnav"/>
     <replace css:theme-children="#footer-menu" css:content-children="#portal-globalnav"/>
