@@ -6076,6 +6076,15 @@ th.hide-for-touch {
     display: table-cell !important; }
  }
 
+/*main header*/
+#main-header {
+  background: url(../images/bg-header.png) top center repeat-x #fff;
+  height: 331px; }
+  #main-header #sitename a img {
+    margin-top: 40px; }
+  #main-header #main-search {
+    margin-top: 100px; }
+
 /*navigation*/
 #main-menu ul {
   list-style: none;
