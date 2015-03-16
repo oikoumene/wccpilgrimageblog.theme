@@ -276,7 +276,12 @@
                                     </td>
                                     <td>
                                           <tal:block tal:define="comments python: context.portal_catalog.searchResults(portal_type='Discussion Item', path={'query':item.getPath(), 'depth':2})" tal:condition="comments">
-                                                <span tal:content="python: 'Comments: '+str(len(comments))"></span>
+                                                <tal:if tal:condition="python: len(comments) > 1">
+                                                      <span tal:content="python: str(len(comments))+' Comments'"></span>
+                                                </tal:if>
+                                                <tal:if tal:condition="python: len(comments) <= 1">
+                                                      <span tal:content="python: str(len(comments))+' Comment'"></span>
+                                                </tal:if>
                                           </tal:block>
                                     </td>
                                 </tr>
