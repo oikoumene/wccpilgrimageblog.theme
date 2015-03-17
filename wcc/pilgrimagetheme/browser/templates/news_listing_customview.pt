@@ -19,7 +19,7 @@
                                       toLocalizedTime nocall: context/@@plone/toLocalizedTime;"
                           tal:condition="listings">
             
-              <article class="post-wrapper" tal:repeat="item batch">
+              <article class="post-article" tal:repeat="item batch">
                   <tal:entry tal:define="item_creator item/Creator;
                                       item_url item/getURL|item/absolute_url;
                                       item_id item/getId|item/id;
@@ -27,9 +27,15 @@
                                       item_description item/Description;
                                       item_modified item/ModificationDate;
                                       item_title_or_id item/pretty_title_or_id;">
-                  <div class="large-1 columns post-detail-wrap">
-                        <div class="post_author">
-                            <div class="username">
+                        <h3>
+                              <a href="#"
+                                    class="summary url"
+                                    tal:attributes="href item_url;"
+                                    tal:content="item_title_or_id">
+                                     Item Title
+                              </a>
+                        </h3>
+                        <p class="post_author">
                                 <tal:name tal:condition="item_creator"
                                 tal:define="author python:pas_member.info(item_creator)">
                                     <a href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
@@ -39,52 +45,21 @@
                                     </a>
                                 
                                 </tal:name>
-                            </div>
+                        </p>
+                        <div class="row">
+                              <div class="large-12 columns">
+                                    <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
+                                    <p class="post_comment" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
+                                        <span tal:content="numComments"></span>
+                                        <tal:if tal:condition="python: numComments > 1">
+                                              Comments
+                                        </tal:if>
+                                        <tal:if tal:condition="python: numComments <= 1">
+                                              Comment
+                                        </tal:if>
+                                    </p>
+                              </div>
                         </div>
-                        
-                   </div>
-                  <div class="large-11 columns article post-content-wrap">
-                        <div class="post_thumb">
-                          <a href="#"
-                              tal:condition="exists:item_object/image_large"
-                              tal:attributes="href item_url">
-                               <img src="" alt=""
-                                    tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
-                          </a>
-                        </div>
-                        <div class="post_info">
-                          <span class="post_date" tal:replace="python:toLocalizedTime(item_modified,long_format=1)">
-                                    August 16, 2001 at 23:35:59
-                            </span>
-                        </div>
-                        <h2 class="post_title">
-                          <a href="#"
-                              class="summary url"
-                              tal:attributes="href item_url;"
-                              tal:content="item_title_or_id">
-                               Item Title
-                           </a>
-                        </h2>
-                        <div class="post_content">
-                          <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
-                          <p tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
-                              <span tal:content="numComments"></span>
-                              <tal:if tal:condition="python: numComments > 1">
-                                    Comments
-                              </tal:if>
-                              <tal:if tal:condition="python: numComments <= 1">
-                                    Comment
-                              </tal:if>
-                          </p>
-                          <p>
-                              <a href=""
-                                  tal:attributes="href item_url"> 
-                                   
-                                    <span i18n:translate="read_more">Read More.</span> 
-                              </a>
-                          </p>
-                        </div>
-                    </div>
                   </tal:entry>
               </article>
             <div metal:use-macro="context/batch_macros/macros/navigation" />
