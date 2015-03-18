@@ -72,6 +72,8 @@
                                           </h2>
                                           <div class="post_content">
                                             <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
+                                            
+                                            
                                             <p>
                                                 <a href=""
                                                     tal:attributes="href item_url"> 
@@ -80,6 +82,22 @@
                                                 </a>
                                             </p>
                                           </div>
+                                          <p>
+                                                <span tal:define="tags item/Subject|nothing"
+                                                      tal:condition="tags">
+                                                    
+                                                    <tal:filedunder i18n:translate="label_tags">Tags:</tal:filedunder>
+                                                        <span tal:repeat="tag tags">
+                                                            <a href=""
+                                                               class="link-tag"
+                                                               rel="tag"
+                                                               tal:content="tag"
+                                                               tal:attributes="href string:${navigation_root_url}/search?Subject%3Alist=${tag}">
+                                                               Tag
+                                                            </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+                                                        </span>
+                                                </span>
+                                          </p>
                                       </div>
                                     
                               </article> 

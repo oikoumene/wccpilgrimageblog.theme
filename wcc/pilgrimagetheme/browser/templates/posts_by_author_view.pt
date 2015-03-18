@@ -23,6 +23,7 @@
                                    batch python: Batch(brains, b_size, int(b_start), orphan=0);
                                    navigation_root_url context/@@plone_portal_state/navigation_root_url;"
                        tal:condition="brains">
+                <h2 tal:content="string: Latest posts by ${view/authorValue}"></h2>
                   <tal:entry tal:repeat="item batch">
                         <div class="tileItem visualIEFloatFix"
                            tal:define="item_object item/_unrestrictedGetObject;
@@ -53,12 +54,12 @@
                                          
       
                                       <!-- Note: add fist image here.Latest tag  -->
-                                       <div class="post_thumb" tal:condition="python: item_number == 1">
+                                       <div class="post_thumb">
                                             <a href="#"
-                                                tal:condition="exists:item_object/image_large"
+                                                tal:condition="exists:item_object/image_mini"
                                                 tal:attributes="href item_url">
                                                  <img src="" alt=""
-                                                      tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
+                                                      tal:replace="structure python: path('nocall:item_object/tag')(scale='mini')" />
                                             </a>
                                           </div> 
                                           
@@ -84,6 +85,32 @@
                                                       <span i18n:translate="read_more">Read More.</span> 
                                                 </a>
                                             </p>
+                                          </div>
+                                          <span tal:define="tags item/Subject|nothing"
+                                                tal:condition="tags">
+                                              
+                                              <tal:filedunder i18n:translate="label_tags">Tags:</tal:filedunder>
+                                                <span tal:repeat="tag tags">
+                                                    <a href=""
+                                                       class="link-tag"
+                                                       rel="tag"
+                                                       tal:content="tag"
+                                                       tal:attributes="href string:${navigation_root_url}/search?Subject%3Alist=${tag}">
+                                                       Tag
+                                                    </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+                                                </span>
+                                                <br/>
+                                          </span>
+                                          
+                                          <div class="comment-count" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
+                                                <i class="fa fa-comment fa-2x"></i>
+                                                <span tal:content="numComments">10</span>
+                                                <tal:if tal:condition="python: numComments > 1">
+                                                      <span class="hide">Comments</span>
+                                                </tal:if>
+                                                <tal:if tal:condition="python: numComments <= 1">
+                                                      <span class="hide">Comment</span>
+                                                </tal:if>
                                           </div>
                                       </div>
                                     

@@ -2,6 +2,7 @@ from five import grok
 from Products.CMFCore.utils import getToolByName
 from Products.ATContentTypes.interface import IATFolder
 from Products.CMFCore.interfaces import ISiteRoot
+from plone.app.discussion.interfaces import IConversation, IComment
 
 grok.templatedir('templates')
 
@@ -18,8 +19,8 @@ class posts_by_author_view(grok.View):
         request = self.request
         author = None
         if request.form:
-            if 'name' in request.form:
-                author = request.form['name']
+            author = self.authorValue()
+            if author:
                 results = self.catalog.unrestrictedSearchResults(portal_type='News Item',
                                                                       sort_on='created',
                                                                       sort_order='reverse',
@@ -28,4 +29,16 @@ class posts_by_author_view(grok.View):
         
     
         return results
+    
+    def authorValue(self):
+        tag = ''
+        request = self.request
+        if request.form:
+            if 'name' in request.form:
+                tag = request.form['name']
+        return tag
+    
+    def totalComments(self, context=None):
+        comments = IConversation(context)
+        return len(comments)
     
