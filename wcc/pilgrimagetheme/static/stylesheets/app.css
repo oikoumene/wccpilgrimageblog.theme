@@ -7396,6 +7396,12 @@ th.hide-for-touch {
   #main-menu ul li:first-child {
     margin-left: 0; }
 
+/*breadcrumbs*/
+#portal-breadcrumbs {
+  font-size: 13px;
+  color: #CCCCCC;
+  margin-bottom: 20px; }
+
 /*post article*/
 .post-article {
   position: relative;
@@ -7497,7 +7503,7 @@ footer {
 #content div.documentByLine {
   font-size: 85%;
   display: block;
-  color: #666; }
+  color: #CCCCCC; }
 
 #content img.tileImage, #content div.newsImageContainer {
   float: right;
@@ -8917,7 +8923,8 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
   padding-top: 0.5em;
   line-height: 1.5em;
   margin-left: 1em;
-  display: block; }
+  display: block;
+  color: #CCCCCC; }
 
 #portlet-prefs a {
   border: none;

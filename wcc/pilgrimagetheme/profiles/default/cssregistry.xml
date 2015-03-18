@@ -7,6 +7,11 @@
         cacheable="True" compression="safe" cookable="True"
         enabled="1" expression="python: ('@@theming-controlpanel' in request.getURL() and request.HTTP_X_THEME_ENABLED) or not request.HTTP_X_THEME_ENABLED"/>
     <stylesheet title=""
+        id="base.css"
+        media="screen" rel="stylesheet" rendering="import"
+        cacheable="True" compression="safe" cookable="True"
+        enabled="1" expression="not: request/HTTP_X_THEME_ENABLED | nothing"/>
+    <stylesheet title=""
         id="mobile.css"
         media="screen" rel="stylesheet" rendering="import"
         cacheable="True" compression="safe" cookable="True"
