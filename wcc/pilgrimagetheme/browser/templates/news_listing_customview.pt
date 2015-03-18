@@ -27,14 +27,14 @@
                                       item_description item/Description;
                                       item_modified item/ModificationDate;
                                       item_title_or_id item/pretty_title_or_id;">
-                        <h2 class="post_title">
+                        <h3 class="post_title">
                               <a href="#"
                                     class="summary url"
                                     tal:attributes="href item_url;"
                                     tal:content="item_title_or_id">
                                      Item Title
                               </a>
-                        </h2>
+                        </h3>
                         <p class="post_author">
                                 <tal:name tal:condition="item_creator"
                                 tal:define="author python:pas_member.info(item_creator)">
