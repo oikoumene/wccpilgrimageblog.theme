@@ -54,6 +54,12 @@
                         <div class="comment-count" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
                               <i class="fa fa-comment fa-2x"></i>
                               <span tal:content="numComments">10</span>
+                              <tal:if tal:condition="python: numComments > 1">
+                                    <span class="hide">Comments</span>
+                              </tal:if>
+                              <tal:if tal:condition="python: numComments <= 1">
+                                    <span class="hide">Comment</span>
+                              </tal:if>
                         </div>
                   </tal:entry>
               </article>
