@@ -27,14 +27,14 @@
                                       item_description item/Description;
                                       item_modified item/ModificationDate;
                                       item_title_or_id item/pretty_title_or_id;">
-                        <h3>
+                        <h2 class="post_title">
                               <a href="#"
                                     class="summary url"
                                     tal:attributes="href item_url;"
                                     tal:content="item_title_or_id">
                                      Item Title
                               </a>
-                        </h3>
+                        </h2>
                         <p class="post_author">
                                 <tal:name tal:condition="item_creator"
                                 tal:define="author python:pas_member.info(item_creator)">
@@ -49,16 +49,17 @@
                         <div class="row">
                               <div class="large-12 columns">
                                     <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
-                                    <p class="post_comment" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
-                                        <span tal:content="numComments"></span>
-                                        <tal:if tal:condition="python: numComments > 1">
-                                              Comments
-                                        </tal:if>
-                                        <tal:if tal:condition="python: numComments <= 1">
-                                              Comment
-                                        </tal:if>
-                                    </p>
                               </div>
+                        </div>
+                        <div class="comment-count" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
+                              <i class="fa fa-comment fa-2x"></i>
+                              <span tal:content="numComments">10</span>
+                              <tal:if tal:condition="python: numComments > 1">
+                                    <span class="hide">Comments</span>
+                              </tal:if>
+                              <tal:if tal:condition="python: numComments <= 1">
+                                    <span class="hide">Comment</span>
+                              </tal:if>
                         </div>
                   </tal:entry>
               </article>
