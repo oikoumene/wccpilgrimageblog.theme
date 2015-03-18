@@ -7398,15 +7398,37 @@ th.hide-for-touch {
 
 /*post article*/
 .post-article {
+  position: relative;
   margin-bottom: 30px; }
+  .post-article .post_title {
+    margin-right: 40px; }
   .post-article .post_author a {
     font-style: italic;
-    color: #666;
+    color: #CCCCCC;
     margin-bottom: 1rem; }
   .post-article .post_comment {
     font-style: italic;
     color: #666;
     margin-bottom: 1rem; }
+  .post-article .comment-count {
+    position: absolute;
+    white-space: nowrap;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    overflow: hidden; }
+    .post-article .comment-count i {
+      position: absolute;
+      color: #CCCCCC; }
+    .post-article .comment-count span {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      right: 0;
+      color: #fff;
+      font-size: 13px;
+      text-align: center; }
 
 /*tags*/
 #tags-wrapper {
