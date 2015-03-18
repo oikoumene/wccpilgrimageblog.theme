@@ -32,8 +32,8 @@
     <replace css:theme-children=".theme_button" css:content-children="#portal-globalnav"/>
     
     <!--drop from content-->
-    <!--<drop css:content="#parent-fieldname-description" />
-    <drop css:content=".documentFirstHeading" />-->
+    <drop css:content="#parent-fieldname-description" />
+    <!--<drop css:content=".documentFirstHeading" />-->
     
     <!-- search -->
     <replace css:theme-children="#main-search">

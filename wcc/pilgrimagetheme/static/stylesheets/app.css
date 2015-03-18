@@ -9222,7 +9222,7 @@ dl.newTagsSection dd textarea {
 /*start comments*/
 .discussion .commentImage img {
   height: 32px; }
-.discussion input[name="form.button.DeleteComment"] {
+.discussion input[name="form.button.DeleteComment"], .discussion input[name="form.button.PublishComment"], .discussion input[name="form.button.EditComment"] {
   padding-top: 0.55556rem;
   padding-right: 1.11111rem;
   padding-bottom: 0.61111rem;
