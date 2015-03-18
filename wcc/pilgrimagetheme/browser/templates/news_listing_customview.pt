@@ -47,7 +47,12 @@
                                 </tal:name>
                         </p>
                         <div class="row">
-                              <div class="large-12 columns">
+                              <div class="large-5 columns">
+                                    <a href="#" tal:condition="exists:item_object/image_large" tal:attributes="href item_url">
+                                          <img src="" alt="" tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
+                                    </a>
+                              </div>
+                              <div class="large-7 columns">
                                     <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
                               </div>
                         </div>
