@@ -7436,6 +7436,19 @@ th.hide-for-touch {
       font-size: 13px;
       text-align: center; }
 
+aside > div {
+  margin-bottom: 30px; }
+  aside > div ul {
+    list-style: none;
+    margin-left: 0; }
+aside .portletRSS .portletItem, aside .portletNews .portletItem {
+  padding: 5px 10px;
+  margin-bottom: 0; }
+  aside .portletRSS .portletItem span.portletItemDetails, aside .portletNews .portletItem span.portletItemDetails {
+    margin-left: 0; }
+aside .portletRSS .portletItem:nth-child(even), aside .portletNews .portletItem:nth-child(even) {
+  background-color: #FAFAFA; }
+
 /*tags*/
 #tags-wrapper {
   text-align: center; }
@@ -8873,10 +8886,8 @@ a.managePortletsFallback {
 /* @end */
 /* @group Portlets */
 dl.portlet {
-  margin: 0 0 1em;
-  font-size: inherit;
-  background: none #fff;
-  border-radius: 0.5rem; }
+  margin: 0 0 30px;
+  font-size: inherit; }
 
 dl.portletError {
   background-color: #FFA500; }
@@ -8885,13 +8896,15 @@ dl.portlet dt {
   /*padding: 0.42em 1em;*/
   /*background: #ddd;*/
   /*line-height: normal;*/
+  padding-bottom: 10px;
   font-size: 20px;
   line-height: 24px;
-  font-weight: 300;
-  text-transform: uppercase; }
+  margin-bottom: 15px;
+  font-weight: normal;
+  border-bottom: 1px solid #CCCCCC; }
 
 dl.portlet dt.hiddenStructure {
-  padding: 0 !important; }
+  padding: 0; }
 
 dl.portlet dt a:link, dl.portlet dt a:visited, dl.portlet dt a:hover {
   color: black;
@@ -8899,12 +8912,7 @@ dl.portlet dt a:link, dl.portlet dt a:visited, dl.portlet dt a:hover {
   border: none; }
 
 dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
-  padding: 1em;
-  /*custom*/ }
-  dl.portlet dd.portletItem ul, dl.portlet dd.portletFooter ul, dl.portletError dd ul {
-    list-style: none;
-    margin: 0;
-    padding: 0; }
+  /*padding: 1em;*/ }
 
 .blockedPortlet .portletHeader {
   border: 1px dashed #ddd;
@@ -8923,8 +8931,7 @@ dl.portlet dd.portletItem, dl.portlet dd.portletFooter, dl.portletError dd {
   padding-top: 0.5em;
   line-height: 1.5em;
   margin-left: 1em;
-  display: block;
-  color: #CCCCCC; }
+  display: block; }
 
 #portlet-prefs a {
   border: none;
@@ -8941,17 +8948,18 @@ dl.portletNavigationTree dd.portletItem {
   padding: 0; }
 
 dl.portlet ul.navTreeLevel0 > .navTreeItem {
-  padding: 0.25em 1em;
+  /*padding: 0.25em 1em;*/
   border-bottom: 0.1em dotted #ddd;
   line-height: 2em; }
 
 dl.portlet ul.navTreeLevel1 .navTreeItem {
-  padding-left: 0.5em;
+  /*padding-left: 0.5em;*/
   line-height: 2em; }
 
-div.portlet-content ul.navTree .navTreeCurrentNode, dl.portlet ul.navTree .navTreeCurrentItem {
-  background-color: #ddd;
-  border-left: 1em solid #ddd;
+dl.portlet ul.navTree .navTreeCurrentItem {
+  color: #CCCCCC;
+  /*background-color: #ddd;*/
+  /*border-left: 1em solid #ddd;*/
   /*margin-left: -1em;*/
   /*margin-right: -1em;*/ }
 
@@ -8965,8 +8973,7 @@ div.portlet-content ul.navTree .navTreeCurrentNode, dl.portlet ul.navTree .navTr
   font-weight: bold;
   text-align: center;
   line-height: 1.6em;
-  border-bottom: none;
-  font-size: 1.2rem !important; }
+  border-bottom: none; }
 
 #visual-portal-wrapper dl.portletCalendar dd {
   padding: 0; }
