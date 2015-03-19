@@ -34,86 +34,73 @@
                                        item_number repeat/item/number;
                                        item_url item/getURL|item/absolute_url">
                             
-                              <article class="post-wrapper">
-                                  <div class="large-1 columns post-detail-wrap">
-                                      <div class="post_author">
-                                          <div class="username">
-                                          <tal:name tal:condition="item_creator"
-                                                tal:define="author python:pas_member.info(item_creator)">
-                                              <a href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
-                                                 tal:content="author/name_or_id"
-                                                 tal:omit-tag="not:author">
-                                                Author Name
-                                              </a>
-                                              
-                                            </tal:name>
-                                          </div>
-                                      </div>
-                                  </div>
-                                      <div class="large-11 columns article post-content-wrap">
-                                         
-      
-                                      <!-- Note: add fist image here.Latest tag  -->
-                                       <div class="post_thumb">
-                                            <a href="#"
-                                                tal:condition="exists:item_object/image_mini"
-                                                tal:attributes="href item_url">
-                                                 <img src="" alt=""
-                                                      tal:replace="structure python: path('nocall:item_object/tag')(scale='mini')" />
-                                            </a>
-                                          </div> 
-                                          
-                                          <div class="post_info">
-                                            <span class="post_date" tal:replace="python:toLocalizedTime(item_modified,long_format=1)">
-                                                      August 16, 2001 at 23:35:59
-                                              </span>
-                                          </div>
-                                          <h2 class="post_title">
-                                            <a href="#"
+                              <article class="post-article">
+                                    <h3 class="post_title">
+                                         <a href="#"
                                                 class="summary url"
                                                 tal:attributes="href item_url;"
                                                 tal:content="item_title_or_id">
                                                  Item Title
-                                             </a>
-                                          </h2>
-                                          <div class="post_content">
-                                            <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
-                                            <p>
-                                                <a href=""
-                                                    tal:attributes="href item_url"> 
-                                                     
-                                                      <span i18n:translate="read_more">Read More.</span> 
+                                          </a> 
+                                    </h3>
+                                    <p class="post_author">
+                                          <tal:name tal:condition="item_creator"
+                                          tal:define="author python:pas_member.info(item_creator)">
+                                                <a href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
+                                                      tal:content="author/name_or_id"
+                                                      tal:omit-tag="not:author">
+                                                     Author Name
                                                 </a>
-                                            </p>
-                                          </div>
-                                          <span tal:define="tags item/Subject|nothing"
-                                                tal:condition="tags">
-                                              
-                                              <tal:filedunder i18n:translate="label_tags">Tags:</tal:filedunder>
-                                                <span tal:repeat="tag tags">
-                                                    <a href=""
-                                                       class="link-tag"
-                                                       rel="tag"
-                                                       tal:content="tag"
-                                                       tal:attributes="href string:${navigation_root_url}/search?Subject%3Alist=${tag}">
-                                                       Tag
-                                                    </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
-                                                </span>
-                                                <br/>
-                                          </span>
                                           
-                                          <div class="comment-count" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
-                                                <i class="fa fa-comment fa-2x"></i>
-                                                <span tal:content="numComments">10</span>
-                                                <tal:if tal:condition="python: numComments > 1">
-                                                      <span class="hide">Comments</span>
-                                                </tal:if>
-                                                <tal:if tal:condition="python: numComments <= 1">
-                                                      <span class="hide">Comment</span>
-                                                </tal:if>
-                                          </div>
-                                      </div>
+                                          </tal:name>
+                                    </p>
                                     
+                                    <div class="row">
+                              
+                                          <tal:block tal:condition="exists:item_object/image_large">
+                                                <div class="large-5 columns">
+                                                      <a href="#" tal:attributes="href item_url">
+                                                            <img src="" alt="" tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
+                                                      </a>
+                                                </div>
+                                                <div class="large-7 columns">
+                                                      <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
+                                                </div>
+                                          </tal:block>
+                                          
+                                          <tal:block tal:condition="python: not bool(item_object.getImage())">
+                                                <div class="large-12 columns">
+                                                      <p tal:condition="item_description" tal:content="item_description">Description here</p>
+                                                </div>
+                                          </tal:block>
+                                    </div>
+                                    
+                                    <span tal:define="tags item/Subject|nothing"
+                                          tal:condition="tags">
+                                        
+                                        <tal:filedunder i18n:translate="label_tags">Tags:</tal:filedunder>
+                                          <span tal:repeat="tag tags">
+                                              <a href=""
+                                                 class="link-tag"
+                                                 rel="tag"
+                                                 tal:content="tag"
+                                                 tal:attributes="href string:${navigation_root_url}/search?Subject%3Alist=${tag}">
+                                                 Tag
+                                              </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
+                                          </span>
+                                          <br/>
+                                    </span>
+                                    
+                                    <div class="comment-count" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
+                                          <i class="fa fa-comment fa-2x"></i>
+                                          <span tal:content="numComments">10</span>
+                                          <tal:if tal:condition="python: numComments > 1">
+                                                <span class="hide">Comments</span>
+                                          </tal:if>
+                                          <tal:if tal:condition="python: numComments <= 1">
+                                                <span class="hide">Comment</span>
+                                          </tal:if>
+                                    </div>
                               </article> 
                         
                           
