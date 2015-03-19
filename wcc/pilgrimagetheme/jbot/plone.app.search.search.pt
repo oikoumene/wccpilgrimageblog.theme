@@ -272,8 +272,13 @@
                                                    show_about python:not isAnon or allowAnonymousViewAbout;">
                           <dl class="searchResults">
                               <tal:results repeat="item batch">
-                                    <dt tal:attributes="class item/ContentTypeClass">
-                                      <img tal:replace="structure item/getIcon" />
+                                    <dt tal:define="item_object item/getObject; item_url item/getURL|item/absolute_url">
+                                      <!--<img tal:replace="structure item/getIcon" />-->
+                                      <a href="#" tal:condition="exists:item_object/image_mini" tal:attributes="href item_url">
+                                         <img src="" alt="" tal:replace="structure python: path('nocall:item_object/tag')(scale='mini')" />
+                                      </a>
+                                      
+                                      
                                       <a href="#"
                                          tal:define="item_url item/getURL;
                                                      item_type item/portal_type"
@@ -369,7 +374,18 @@
                                           </span>
 
                                       </cite>
-
+                                      <p>
+                                        <tal:block tal:define="item_url item/getPath|item/absolute_url;
+                                                               comments python: context.portal_catalog.unrestrictedSearchResults(path={'query':item_url, 'depth':5}, portal_type='Discussion Item')"
+                                                    tal:condition="comments">
+                                          <tal:if tal:condition="python: len(comments) > 1">
+                                                <span tal:content="python: str(len(comments))+' Comments'"></span>
+                                          </tal:if>
+                                          <tal:if tal:condition="python: len(comments) <= 1">
+                                                <span tal:content="python: str(len(comments))+' Comment'"></span>
+                                          </tal:if>
+                                        </tal:block>
+                                      </p>
                                     </dd>
                               </tal:results>
                           </dl>
