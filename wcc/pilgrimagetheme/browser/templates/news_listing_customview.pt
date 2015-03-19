@@ -58,7 +58,8 @@
                                           <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
                                     </div>
                               </tal:block>
-                              <tal:block tal:condition="python: not hasattr(item_object,'image_large')">
+                              
+                              <tal:block tal:condition="python: not bool(item_object.getImage())">
                                     <div class="large-12 columns">
                                           <p tal:condition="item_description" tal:content="item_description">Description here</p>
                                     </div>
