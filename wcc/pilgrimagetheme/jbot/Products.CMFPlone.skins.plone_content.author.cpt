@@ -96,7 +96,7 @@
                 <h1 class="documentFirstHeading" tal:condition="not: authorinfo/fullname" tal:content="author">
                     Author ID
                 </h1>
-
+            
                 <div class="documentDescription" tal:content="authorinfo/description">
                     Author description.
                 </div>
@@ -141,7 +141,7 @@
                        i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
                     </p>
 
-                    <tal:noemailsetup tal:condition="python:not (email_from_address or isAnon)">
+                    <!--<tal:noemailsetup tal:condition="python:not (email_from_address or isAnon)">
                         <p class="discreet"
                            i18n:translate="text_no_email_setup">
                             This site doesn't have a valid email setup, so you cannot use
@@ -156,7 +156,7 @@
                             cannot use any contact forms. Please edit
                             your personal information.
                         </p>
-                    </tal:noemail>
+                    </tal:noemail>-->
 
                     <tal:mailsetup tal:condition="python:email_from_address and authorinfo['has_email']">
 
