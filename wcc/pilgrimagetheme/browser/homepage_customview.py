@@ -2,6 +2,7 @@ from five import grok
 from Products.CMFCore.utils import getToolByName
 from Products.ATContentTypes.interface import IATFolder
 from Products.CMFCore.interfaces import ISiteRoot
+from plone.app.discussion.interfaces import IConversation, IComment
 
 grok.templatedir('templates')
 
@@ -19,4 +20,6 @@ class homepage_customview(grok.View):
                                                         sort_order='reverse')[:4]
     
         
-    
+    def totalComments(self, context=None):
+        comments = IConversation(context)
+        return len(comments)
