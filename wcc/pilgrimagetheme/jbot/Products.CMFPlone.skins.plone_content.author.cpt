@@ -89,58 +89,59 @@
             </div>
 
             <div id="content">
-                <!-- Author information -->
-                <h1 class="documentFirstHeading" tal:condition="authorinfo/fullname" tal:content="authorinfo/fullname">
-                    Author name
-                </h1>
-
-                <h1 class="documentFirstHeading" tal:condition="not: authorinfo/fullname" tal:content="author">
-                    Author ID
-                </h1>
-            
-                <div class="documentDescription" tal:content="authorinfo/description">
-                    Author description.
-                </div>
 
                 <div id="content-core">
-                    <div class="discreet">
-                        <tal:location condition="authorinfo/location"
-                                      i18n:translate="text_location">
-                            Location:
-                            <span tal:content="authorinfo/location"
-                                  tal:omit-tag=""
-                                  i18n:name="location">
-                                Some location
-                            </span>
-                        </tal:location>
-
-                        <tal:language condition="authorinfo/language">
-                        &mdash;
-                        <span i18n:translate="label_main_language">Main Language:</span>
-                        <span tal:replace="authorinfo/language">Some language</span>
-                        </tal:language>
-                    </div>
-
-                    <img src=""
-                         alt=""
-                         class="portraitPhoto"
-                         width="75"
-                         style="float: left; margin: 1em;"
-                         tal:attributes="src portrait/absolute_url" />
-
+                        
+                        <!-- Author information -->
+                        <section class="author-prof-wrapper">
+                              <div class="author-prof">
+                                    <img src=""
+                                          alt=""
+                                          class="portraitPhoto"
+                                          width="300"
+                                          tal:attributes="src portrait/absolute_url" />
+                                    <div>
+                                          <h1 class="documentFirstHeading" tal:condition="authorinfo/fullname" tal:content="authorinfo/fullname">
+                                          Author name
+                                          </h1>
+                                          <h1 class="documentFirstHeading" tal:condition="not: authorinfo/fullname" tal:content="author">
+                                                Author ID
+                                          </h1>
+                                          <p class="discreet">
+                                                <tal:location condition="authorinfo/location"
+                                                              i18n:translate="text_location">
+                                                    Location:
+                                                    <span tal:content="authorinfo/location"
+                                                          tal:omit-tag=""
+                                                          i18n:name="location">
+                                                        Some location
+                                                    </span>
+                                                </tal:location>
+                        
+                                                <tal:language condition="authorinfo/language">
+                                                &mdash;
+                                                <span i18n:translate="label_main_language">Main Language:</span>
+                                                <span tal:replace="authorinfo/language">Some language</span>
+                                                </tal:language>
+                                          </p>
+                                          <p tal:condition="python:mtool.getHomeFolder(id=author)">
+                                                <a href="#" tal:attributes="href python:mtool.getHomeFolder(id=author).absolute_url()"
+                                                      i18n:translate="label_author_internal_home_page">Author's home page in this site&hellip;</a>
+                                          </p>
+                                          <p tal:condition="python: not mtool.getHomeFolder(id=author) and authorinfo['home_page']">
+                                          <a href="#"
+                                             rel="nofollow"
+                                             tal:attributes="href authorinfo/home_page"
+                                             i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
+                                          </p>
+                                    </div>
+                              </div>
+                              <div class="_documentDescription" tal:content="authorinfo/description">
+                                    Author description.
+                              </div>
+                        </section>
+                        
                     <div class="visualClear"><!-- --></div>
-
-                    <p tal:condition="python:mtool.getHomeFolder(id=author)">
-                    <a href="#" tal:attributes="href python:mtool.getHomeFolder(id=author).absolute_url()"
-                       i18n:translate="label_author_internal_home_page">Author's home page in this site&hellip;</a>
-                    </p>
-
-                    <p tal:condition="python: not mtool.getHomeFolder(id=author) and authorinfo['home_page']">
-                    <a href="#"
-                       rel="nofollow"
-                       tal:attributes="href authorinfo/home_page"
-                       i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
-                    </p>
 
                     <!--<tal:noemailsetup tal:condition="python:not (email_from_address or isAnon)">
                         <p class="discreet"
