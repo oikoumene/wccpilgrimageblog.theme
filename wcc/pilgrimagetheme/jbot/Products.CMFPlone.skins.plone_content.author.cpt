@@ -40,7 +40,8 @@
                                 here_url context/@@plone_context_state/object_url;
                                 member context/@@plone_portal_state/member;
                                 portal context/@@plone_portal_state/portal;
-                                email_from_address portal/email_from_address">
+                                email_from_address portal/email_from_address;
+                                pas_member context/@@pas_member">
 
         <tal:noAuthor condition="not: authorinfo">
             <dl class="portalMessage error">
@@ -260,7 +261,7 @@
                         </h2>
 
                         <div metal:define-macro="user_content_listing">
-                        <table class="vertical listing"
+                        <!--<table class="vertical listing"
                                summary="Lists content written by an author grouped by content type"
                                i18n:attributes="summary summary_author_content_list;">
                             <tal:repeat repeat="item author_content">
@@ -286,7 +287,105 @@
                                     </td>
                                 </tr>
                             </tal:repeat>
-                        </table>
+                        </table>-->
+                        <tal:entry tal:repeat="item author_content">
+                              <div class="tileItem visualIEFloatFix"
+                                    tal:define="item_object item/_unrestrictedGetObject;
+                                                item_creator item/Creator;
+                                                item_modified item/ModificationDate;
+                                                item_title_or_id item/pretty_title_or_id;
+                                                item_description item/Description;
+                                                item_number repeat/item/number;
+                                                item_url item/getURL|item/absolute_url">
+                                     
+                                       <article class="post-article" tal:condition="not: repeat/item/start">
+                                             <h3 class="post_title">
+                                                   <a href="#"
+                                                         class="summary url"
+                                                         tal:attributes="href item_url;"
+                                                         tal:content="item_title_or_id">
+                                                          Item Title
+                                                   </a>
+                                             </h3>
+                                             <p class="post_author">
+                                                   <tal:name tal:condition="item_creator"
+                                                         tal:define="author python:pas_member.info(item_creator)">
+                                                       <a href="#" tal:attributes="href string:${portal_url}/author/${item_creator}"
+                                                          tal:content="author/name_or_id"
+                                                          tal:omit-tag="not:author">
+                                                         Author Name
+                                                       </a>
+                                                   </tal:name>
+                                             </p>
+                                             <div class="row">
+                                                   
+                                                   
+                                                   <div class="large-12 columns">
+                                                         <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
+                                                   </div>
+                                             </div>
+                                             <div class="comment-count" tal:define="numComments python: context.portal_catalog.searchResults(portal_type='Discussion Item', path={'query':item.getPath(), 'depth':2})" tal:condition="numComments">
+                                                   <i class="fa fa-comment fa-2x"></i>
+                                                   <span tal:content="python: len(numComments)">10</span>
+                                                   <tal:if tal:condition="python: len(numComments) > 1">
+                                                         <span class="hide">Comments</span>
+                                                   </tal:if>
+                                                   <tal:if tal:condition="python: len(numComments) <= 1">
+                                                         <span class="hide">Comment</span>
+                                                   </tal:if>
+                                             </div>
+                                             
+                                       </article>
+                                       <article id="f_post-article" class="post-article" tal:condition="repeat/item/start">
+                                             <h2><a href="#"
+                                                         class="summary url"
+                                                         tal:attributes="href item_url;"
+                                                         tal:content="item_title_or_id">
+                                                          Item Title
+                                                   </a>
+                                             </h2>
+                                             <p class="post_author">
+                                                    <tal:name tal:condition="item_creator"
+                                                         tal:define="author python:pas_member.info(item_creator)">
+                                                       <a href="#" tal:attributes="href string:${portal_url}/author/${item_creator}"
+                                                          tal:content="author/name_or_id"
+                                                          tal:omit-tag="not:author">
+                                                         Author Name
+                                                       </a>
+                                                   </tal:name>      
+                                             </p>
+                                             <div class="row">
+                                               <div class="large-5 columns">
+                                                 <a href="#"
+                                                         tal:condition="exists:item_object/image_large"
+                                                         tal:attributes="href item_url">
+                                                          <img src="" alt=""
+                                                               tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
+                                                   </a>
+                                               </div>
+                                               <div class="large-7 columns">
+                                                 <p tal:condition="item_description" tal:content="item_description">Description</p>
+                                               </div>
+                                             </div>
+                                             <div class="comment-count" tal:define="numComments python: context.portal_catalog.searchResults(portal_type='Discussion Item', path={'query':item.getPath(), 'depth':2})" tal:condition="numComments">
+                                                   <i class="fa fa-comment fa-2x"></i>
+                                                   <span tal:content="python: len(numComments)">10</span>
+                                                   <tal:if tal:condition="python: len(numComments) > 1">
+                                                         <span class="hide">Comments</span>
+                                                   </tal:if>
+                                                   <tal:if tal:condition="python: len(numComments) <= 1">
+                                                         <span class="hide">Comment</span>
+                                                   </tal:if>
+                                             </div>
+                                       </article>
+                                       
+
+                                   
+               
+                                 </div>
+                        </tal:entry>
+                        
+                        
                         </div>
 
                         <p>
