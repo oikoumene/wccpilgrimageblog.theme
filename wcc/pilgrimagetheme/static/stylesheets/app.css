@@ -9356,7 +9356,7 @@ form[action="enl_subscribers_view"] input[type="submit"] {
 .field label[for="form.email"], .field label[for="form.current_password"], .field label[for="form.new_password"], .field label[for="form.new_password_ctl"], .field label[for="sender_from_address"], .field label[for="subject"], .field label[for="message"] {
   display: inline; }
 .field .fieldRequired {
-  color: #ECECEC !important; }
+  color: #fff !important; }
 
 /*portal-column-one under portal-column-content*/
 #portal-column-content #portal-column-one {
