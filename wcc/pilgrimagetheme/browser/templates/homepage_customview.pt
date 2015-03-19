@@ -28,10 +28,16 @@
                                        item_number repeat/item/number;
                                        item_url item/getURL|item/absolute_url">
                             
-                              <article class="post-wrapper">
-                                  <div class="large-1 columns post-detail-wrap">
-                                      <div class="post_author">
-                                          <div class="username">
+                              <article class="post-article">
+                                    <h3 class="post_title">
+                                          <a href="#"
+                                                class="summary url"
+                                                tal:attributes="href item_url;"
+                                                tal:content="item_title_or_id">
+                                                 Item Title
+                                          </a>
+                                    </h3>
+                                    <p class="post_author">
                                           <tal:name tal:condition="item_creator"
                                                 tal:define="author python:pas_member.info(item_creator)">
                                               <a href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
@@ -39,48 +45,36 @@
                                                  tal:omit-tag="not:author">
                                                 Author Name
                                               </a>
-                                              
-                                            </tal:name>
+                                          </tal:name>
+                                    </p>
+                                    <div class="row">
+                                          
+                                          <!--pag naa image-->
+                                          <!--<div class="large-5 columns">
+                                                <img src="../img/landscape/01.jpg" alt="post image" />
                                           </div>
-                                      </div>
-                                  </div>
-                                      <div class="large-11 columns article post-content-wrap">
+                                          <div class="large-7 columns">
+                                                <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
+                                          </div>-->
+                                          
+                                          <!--pag wala image-->
+                                          <div class="large-12 columns">
+                                                <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
+                                          </div>
+                                    </div>
+                              </article>
+                              
+                              
                                          
       
                                       <!-- Note: add fist image here.Latest tag  -->
-                                       <div class="post_thumb" tal:condition="python: item_number == 1">
+                                      <!--    <div class="post_thumb" tal:condition="python: item_number == 1">
                                             <a href="#"
                                                 tal:condition="exists:item_object/image_large"
                                                 tal:attributes="href item_url">
                                                  <img src="" alt=""
                                                       tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
                                             </a>
-                                          </div> 
-                                          
-                                          <div class="post_info">
-                                            <span class="post_date" tal:replace="python:toLocalizedTime(item_modified,long_format=1)">
-                                                      August 16, 2001 at 23:35:59
-                                              </span>
-                                          </div>
-                                          <h2 class="post_title">
-                                            <a href="#"
-                                                class="summary url"
-                                                tal:attributes="href item_url;"
-                                                tal:content="item_title_or_id">
-                                                 Item Title
-                                             </a>
-                                          </h2>
-                                          <div class="post_content">
-                                            <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
-                                            
-                                            
-                                            <p>
-                                                <a href=""
-                                                    tal:attributes="href item_url"> 
-                                                     
-                                                      <span i18n:translate="read_more">Read More.</span> 
-                                                </a>
-                                            </p>
                                           </div>
                                           <p>
                                                 <span tal:define="tags item/Subject|nothing"
@@ -97,10 +91,7 @@
                                                             </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
                                                         </span>
                                                 </span>
-                                          </p>
-                                      </div>
-                                    
-                              </article> 
+                                          </p>-->
                         
                           
       
