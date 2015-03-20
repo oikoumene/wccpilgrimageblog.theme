@@ -93,7 +93,7 @@
                                           </tal:name>      
                                     </p>
                                     <div class="row">
-                                      <div class="large-5 columns">
+                                      <div class="large-4 columns">
                                         <a href="#"
                                                 tal:condition="exists:item_object/image_large"
                                                 tal:attributes="href item_url">
@@ -101,7 +101,7 @@
                                                       tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
                                           </a>
                                       </div>
-                                      <div class="large-7 columns">
+                                      <div class="large-8 columns">
                                         <p tal:condition="item_description" tal:content="item_description">Description</p>
                                       </div>
                                     </div>
