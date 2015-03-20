@@ -7435,6 +7435,10 @@ th.hide-for-touch {
       color: #fff;
       font-size: 13px;
       text-align: center; }
+  .post-article .post_tag {
+    color: #CCCCCC;
+    margin: 1em 0;
+    font-size: 75%; }
 
 aside > div {
   margin-bottom: 30px; }
@@ -7498,6 +7502,10 @@ footer {
       font-size: 20px; }
     .author-prof-wrapper .author-prof > div p {
       margin-bottom: 0; }
+
+/*social adjustment*/
+#viewlet-social-like > div {
+  margin-right: 1em; }
 
 @media only screen and (min-width:64.063em) {
   footer #wcc-footer p {
@@ -9443,3 +9451,25 @@ form[action="enl_subscribers_view"] input[type="submit"] {
 
 #details-fields.widget.radioscrolllist .field .widget select, #details-fields.widget.radioscrolllist .field .widget input {
   margin-bottom: 0 !important; }
+
+/*category*/
+#category {
+  font-size: 75%;
+  margin-bottom: 1em;
+  color: #666;
+  text-align: right; }
+
+#category a.link-category, span.selectedTag {
+  color: black;
+  padding: 0.25em 0.5em;
+  background: #ddd;
+  border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em; }
+
+#category a.link-category:hover {
+  background: #74BF44;
+  color: White; }
+
+#category .separator {
+  display: none; }

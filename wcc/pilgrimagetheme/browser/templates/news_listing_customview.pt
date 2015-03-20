@@ -49,12 +49,12 @@
                         <div class="row">
                               
                               <tal:block tal:condition="exists:item_object/image_large">
-                                    <div class="large-5 columns">
+                                    <div class="large-4 columns">
                                           <a href="#" tal:attributes="href item_url">
                                                 <img src="" alt="" tal:replace="structure python: path('nocall:item_object/tag')(scale='large')" />
                                           </a>
                                     </div>
-                                    <div class="large-7 columns">
+                                    <div class="large-8 columns">
                                           <p tal:condition="item_description" tal:content="item_description">Archbishop Emeritus Desmond Tutu has called on delegates attending next week’s United Nations Climate Summit in New York to take the first tangible steps to move humanity beyond the fossil fuel era.</p>
                                     </div>
                               </tal:block>
@@ -65,7 +65,7 @@
                                     </div>
                               </tal:block>
                         </div>
-                         <span tal:define="tags item/Subject|nothing"
+                         <p class="post_tag" tal:define="tags item/Subject|nothing"
                               tal:condition="tags">
                             
                             <tal:filedunder i18n:translate="label_filed_under">Filed under:</tal:filedunder>
@@ -78,7 +78,7 @@
                                        Tag
                                     </a><tal:separator condition="not: repeat/tag/end">,</tal:separator>
                                 </span>
-                        </span>
+                        </p>
                         
                         <div class="comment-count" tal:define="numComments python: view.totalComments(item_object)" tal:condition="numComments">
                               <i class="fa fa-comment fa-2x"></i>
