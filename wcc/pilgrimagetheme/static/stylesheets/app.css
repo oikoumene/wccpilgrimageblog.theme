@@ -7450,6 +7450,9 @@ aside .portletRSS .portletItem, aside .portletNews .portletItem {
   margin-bottom: 0; }
   aside .portletRSS .portletItem span.portletItemDetails, aside .portletNews .portletItem span.portletItemDetails {
     margin-left: 0; }
+  aside .portletRSS .portletItem a span.portletItemDetails, aside .portletNews .portletItem a span.portletItemDetails {
+    margin-left: 0;
+    color: #222; }
 aside .portletRSS .portletItem:nth-child(even), aside .portletNews .portletItem:nth-child(even) {
   background-color: #FAFAFA; }
 
