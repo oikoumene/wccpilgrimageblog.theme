@@ -33,7 +33,7 @@
     
     <!--drop from content-->
     <drop css:content="#parent-fieldname-description" />
-    <drop css:content="#plone-document-byline" />
+    <!--<drop css:content="#plone-document-byline" />-->
     <!--<drop css:content=".documentFirstHeading" />-->
     
     <!-- search -->
