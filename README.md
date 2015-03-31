@@ -1,2 +1,2 @@
-# wcc.pilgrimagetheme
+# wccpilgrimageblog.theme
 WCC Pilgrimage Blog Theme

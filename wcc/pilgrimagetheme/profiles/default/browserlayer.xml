@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<layers>
-    <layer name="wcc.pilgrimagetheme"
-        interface="wcc.pilgrimagetheme.interfaces.IProductSpecific" />
-</layers>

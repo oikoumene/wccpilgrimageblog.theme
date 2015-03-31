@@ -3,7 +3,7 @@ import os
 
 version = '0.5'
 
-setup(name='wcc.pilgrimagetheme',
+setup(name='wccpilgrimageblog.theme',
       version=version,
       description="WCC Pilgrimage Theme",
       long_description=open("README.rst").read() + "\n" +
