@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<object name="portal_skins" allow_any="False" cookie_persistence="False"
+   default_skin="Sunburst Theme">
+   <object name="wccpilgrimageblog.theme"
+        meta_type="Filesystem Directory View"
+        directory="wccpilgrimageblog.theme:skins/wccpilgrimageblog.theme"/>
+    <skin-path name="*">
+        <layer name="wccpilgrimageblog.theme"
+                insert-after="custom"/>
+    </skin-path>
+</object>
