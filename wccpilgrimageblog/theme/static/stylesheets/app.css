@@ -7469,6 +7469,8 @@ aside .portletRSS .portletItem:nth-child(even), aside .portletNews .portletItem:
 footer {
   background: url(../images/pilgrimage-icon.png) repeat-x 0 10px #74BF44;
   padding-top: 100px; }
+  footer #wcc-copyright a img {
+    margin-right: 5px; }
   footer #wcc-footer {
     background: none #e5e5e5; }
     footer #wcc-footer a {
