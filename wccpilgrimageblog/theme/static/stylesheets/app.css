@@ -7484,6 +7484,8 @@ footer {
       margin: 20px 0;
       font-family: candara, arial, helvitica, sans-serif;
       text-align: center; }
+    footer #wcc-footer .footer-link {
+      margin-top: 32px; }
 
 /*profile page*/
 .author-prof-wrapper .author-prof {
