@@ -7378,7 +7378,10 @@ th.hide-for-touch {
 
 /*main header*/
 #main-header {
-  background: url(../images/bg-header.png) top center repeat-x #fff;
+  background-image: url(../images/bg-header.png);
+  background-position: -250px 0px;
+  background-color: #fff;
+  background-repeat: repeat-x;
   height: 331px; }
   #main-header #sitename a img {
     margin-top: 40px; }
@@ -7515,6 +7518,9 @@ footer {
   margin-right: 1em; }
 
 @media only screen and (min-width:64.063em) {
+  #main-header {
+    background-position: top center; }
+
   footer #wcc-footer p {
     text-align: left; }
   footer #wcc-footer ul {
