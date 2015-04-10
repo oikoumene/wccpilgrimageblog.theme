@@ -38,19 +38,21 @@
     
     <!-- search -->
     <replace css:theme-children="#main-search">
-        <form class="searchform"><xsl:attribute name="action">
-            <xsl:value-of select="//*[@id='portal-searchbox']/form/@action"/></xsl:attribute>
-            <div class="row collapse">
-                <div class="small-9 columns">
-                    <xsl:copy-of css:select="#portal-searchbox input[name='SearchableText']"/>
+        <div class="row collapse">
+            <form class="searchform"><xsl:attribute name="action">
+                <xsl:value-of select="//*[@id='portal-searchbox']/form/@action"/></xsl:attribute>
+                <div class="row collapse">
+                    <div class="small-9 columns">
+                        <xsl:copy-of css:select="#portal-searchbox input[name='SearchableText']"/>
+                    </div>
+                    <div class="small-3 columns">
+                        <button type="submit" style="padding: 10px;">Go</button>
+                    </div>
+                    <br /><br /><br />
+                    <xsl:copy-of css:select="#LSResult"/>
                 </div>
-                <div class="small-3 columns">
-                    <button type="submit" style="padding: 10px;">Go</button>
-                </div>
-                <br /><br /><br />
-                <xsl:copy-of css:select="#LSResult"/>
-            </div>
-        </form>
+            </form>
+        </div>
     </replace>
     
     <!--replace theme content-->
