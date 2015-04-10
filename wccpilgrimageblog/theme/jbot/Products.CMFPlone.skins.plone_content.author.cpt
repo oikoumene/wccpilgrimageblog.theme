@@ -101,12 +101,12 @@
                                           width="300"
                                           tal:attributes="src portrait/absolute_url" />
                                     <div>
-                                          <h1 class="documentFirstHeading" tal:condition="authorinfo/fullname" tal:content="authorinfo/fullname">
+                                          <p class="documentFirstHeading" tal:condition="authorinfo/fullname" tal:content="python: mtool.getMemberInfo(author)['fullname'].title()">
                                           Author name
-                                          </h1>
-                                          <h1 class="documentFirstHeading" tal:condition="not: authorinfo/fullname" tal:content="author">
+                                          </p>
+                                          <p class="documentFirstHeading" tal:condition="not: authorinfo/fullname" tal:content="python: author.title()">
                                                 Author ID
-                                          </h1>
+                                          </p>
                                           <p class="discreet">
                                                 <tal:location condition="authorinfo/location"
                                                               i18n:translate="text_location">
