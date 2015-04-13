@@ -31,9 +31,10 @@ setup(name='wccpilgrimageblog.theme',
           'collective.grok',
           'plone.app.referenceablebehavior',
           'collective.dexteritytextindexer',
-          'plone.app.multilingual',
-          'plone.multilingualbehavior',
-          'z3c.jbot'
+          # 'plone.app.multilingual',
+          # 'plone.multilingualbehavior',
+          'z3c.jbot',
+          'ftw.avatar'
           # -*- Extra requirements: -*-
       ],
       extras_require={
