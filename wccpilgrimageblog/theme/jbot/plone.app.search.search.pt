@@ -33,6 +33,7 @@
                       first_call not:request/advanced_search|nothing;
                       st python:request.get('SearchableText', '');
                       DateTime python:modules['DateTime'].DateTime;
+                      portal_url context/portal_url;
                       ">
 
         <input type="hidden" name="advanced_search" value="False" />
@@ -65,15 +66,13 @@
                     i18n:translate=""
                     tal:condition="st">
                     Search results for
+                    
                     <strong id="search-term" tal:content="st" i18n:name="term">
                         Search Term
                     </strong>
                 </h1>
-
-                <!--<p id="rss-subscription" i18n:domain="plone"
-                   tal:condition="context/portal_syndication/isSiteSyndicationAllowed">
-                      <img src="" alt="RSS"
-                           tal:attributes="src string:${portal_url}/rss.gif"/>
+            <div class="visualClear"><!-- --></div>
+            <div id="rss-subscription" i18n:domain="plone">
                     <a href=""
                        class="link-feed"
                        tal:define="here_url context/@@plone_context_state/object_url"
@@ -82,8 +81,10 @@
                           Subscribe to an always-updated RSS feed.
                         </span>
                     </a>
-                </p>-->
+                </div>   
+                
             </div>
+
             <div class="visualClear"><!-- --></div>
             <div id="search-results-wrapper"
                  class="cell width-full position-0"
