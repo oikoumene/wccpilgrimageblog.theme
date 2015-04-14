@@ -91,7 +91,7 @@
             <div id="content">
 
                 <div id="content-core">
-                        
+                     
                         <!-- Author information -->
                         <section class="author-prof-wrapper">
                               <div class="author-prof">
@@ -404,8 +404,9 @@
                 </div>
             </div>
 
-
-
+    <div>
+    <a href="" tal:attributes="href python: context.portal_url()+'/search_rss?Creator='+author;">Subscribe to an always-updated RSS feed.</a>
+    </div>
             </tal:haveAuthor>
 
     </tal:main-macro>
