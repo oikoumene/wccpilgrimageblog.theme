@@ -46,9 +46,9 @@
                         <xsl:copy-of css:select="#portal-searchbox input[name='SearchableText']"/>
                     </div>
                     <div class="small-3 columns">
-                        <button type="submit" style="padding: 10px;">Go</button>
+                        <button type="submit" class="button postfix">Go</button>
                     </div>
-                    <br /><br /><br />
+                    <br /><br />
                     <xsl:copy-of css:select="#LSResult"/>
                 </div>
             </form>

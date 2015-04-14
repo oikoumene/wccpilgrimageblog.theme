@@ -7382,11 +7382,11 @@ th.hide-for-touch {
   background-position: -250px 0px;
   background-color: #fff;
   background-repeat: repeat-x;
-  height: 331px; }
+  /*height: 250px;*/ }
   #main-header #sitename a img {
-    margin-top: 40px; }
+    margin-top: 10px; }
   #main-header #main-search {
-    margin-top: 100px; }
+    margin-top: 50px; }
 
 /*navigation*/
 #main-menu ul {
@@ -7519,7 +7519,10 @@ footer {
 
 @media only screen and (min-width:64.063em) {
   #main-header {
+    height: 250px;
     background-position: top center; }
+    #main-header #main-search {
+      margin-top: 150px; }
 
   footer #wcc-footer p {
     text-align: left; }
@@ -9486,3 +9489,19 @@ form[action="enl_subscribers_view"] input[type="submit"] {
 
 #category .separator {
   display: none; }
+
+/*image with caption*/
+#content div.newsImageContainer a {
+  border-bottom: none; }
+
+#content div.newsImageContainer p.discreet {
+  margin: 0;
+  padding: 0.5em;
+  background-color: #666;
+  background-color: rgba(40, 40, 40, 0.7);
+  color: White;
+  font-weight: normal;
+  font-size: 80%;
+  position: relative;
+  width: 200px;
+  top: -3em; }
