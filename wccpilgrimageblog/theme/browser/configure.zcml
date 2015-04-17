@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <browser:page
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      name="personal-information"
+      class=".personalpreferences.CustomPersonalPreferencesPanel"
+      permission="cmf.SetOwnProperties"
+      layer="..interfaces.IProductSpecific"
+      />
+
+</configure>
