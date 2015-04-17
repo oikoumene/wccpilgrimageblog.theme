@@ -19,7 +19,7 @@ from plone.app.users.userdataschema import IUserDataSchemaProvider
 class IEnhancedUserDataSchema(IUserDataSchema):
     # ...
     twitter_username = schema.TextLine(
-        title=_(u'label_twitter_username', default=u'Twitter'),
+        title=_(u'label_twitter', default=u'Twitter'),
         description=_(u'desc_twitter_username',
                       default=u"Enter your Twitter Account"),
         required=False,
