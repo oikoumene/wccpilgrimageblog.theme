@@ -404,8 +404,8 @@
                 </div>
             </div>
 
-   <div tal:define="twittername python: mtool.getMemberById(author).twitter_username">
-    <a tal:condition="twittername"
+   <div tal:define="twittername python: mtool.getMemberById(author).getProperty('twitter_username')" tal:condition="twittername">
+    <a
     tal:content= "python: 'Tweets by' + twittername "
     class="twitter-timeline" 
     tal:attributes="href python: 'https://twitter.com/'+ twittername;
