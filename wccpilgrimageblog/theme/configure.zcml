@@ -35,16 +35,18 @@
         />
 
     <browser:page
-    for="Products.CMFPlone.Portal.PloneSite"
-    name="personal-information"
-    class=".userdataschema.CustomizedUserDataPanel"
-    permission="cmf.SetOwnProperties"
+        for="Products.CMFPlone.Portal.PloneSite"
+        name="personal-information"
+        class=".userdataschema.CustomizedUserDataPanel"
+        permission="cmf.SetOwnProperties"
     />
-    
-    
-    
-    
-    
+
+    <browser:page
+        for="Products.CMFPlone.Portal.PloneSite"
+        name="plone.Comment"
+        class=".commentextender.defaultUserNotification"
+        permission="cmf.SetOwnProperties"
+    />
 
     <!-- -*- extra stuff goes here -*- -->
 
