@@ -33,6 +33,13 @@
         factory=".userdataschema.RegistrationPanelExtender"
         provides="plone.z3cform.fieldsets.interfaces.IFormExtender"
         />
+
+    <browser:page
+    for="Products.CMFPlone.Portal.PloneSite"
+    name="personal-information"
+    class=".userdataschema.CustomizedUserDataPanel"
+    permission="cmf.SetOwnProperties"
+    />
     
     
     
