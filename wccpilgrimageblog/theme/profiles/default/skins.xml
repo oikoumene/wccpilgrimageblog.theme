@@ -3,7 +3,7 @@
    default_skin="Sunburst Theme">
    <object name="wccpilgrimageblog.theme"
         meta_type="Filesystem Directory View"
-        directory="wccpilgrimageblog.theme:skins/wccpilgrimageblog.theme"/>
+        directory="wccpilgrimageblog.theme:skins/wccpilgrimageblog_theme"/>
     <skin-path name="*">
         <layer name="wccpilgrimageblog.theme"
                 insert-after="custom"/>
