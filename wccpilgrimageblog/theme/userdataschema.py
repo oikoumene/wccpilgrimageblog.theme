@@ -11,7 +11,8 @@ from z3c.form.field import Fields
 from plone.app.users.browser.register import RegistrationForm
 from plone.app.users.userdataschema import IUserDataSchema
 from plone.app.users.userdataschema import IUserDataSchemaProvider
-
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
+from plone.directives import dexterity, form
 
 
 
@@ -24,6 +25,15 @@ class IEnhancedUserDataSchema(IUserDataSchema):
                       default=u"Enter your Twitter Account"),
         required=False,
         )
+    form.widget(user_biography=WysiwygFieldWidget)
+    user_biography = schema.Text(
+        title=_(u'label_user_biography', default=u'Biography'),
+        description=_(u'desc_user_biography',
+                      default=u"A short overview of who you are and what you do. Will be displayed on your author page, linked from the items you create."),
+        required=False,
+        )
+
+
     
 class UserDataSchemaProvider(object):
     implements(IUserDataSchemaProvider)
@@ -48,3 +58,9 @@ class RegistrationPanelExtender(extensible.FormExtender):
         fields = Fields(IEnhancedUserDataSchema)
         #NB: Not omitting the accept field this time, we want people to check it
         self.add(fields)
+
+
+class CustomizedUserDataPanel(UserDataPanel):
+    def __init__(self, context, request):
+        super(CustomizedUserDataPanel, self).__init__(context, request)
+        self.form_fields = self.form_fields.omit('description')
