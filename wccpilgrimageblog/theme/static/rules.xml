@@ -58,8 +58,10 @@
     <!--author view-->
     <rules css:if-content=".template-author">
         <theme href="left-content.html"/>
+        <drop css:content="#author-twitter-feed" />
         <drop css:content="#subscribe-rss" />
         <replace css:theme-children="#sidebar-right">
+            <xsl:copy-of css:select="#author-twitter-feed"/>
             <xsl:copy-of css:select="#subscribe-rss"/>
         </replace>
     </rules>
