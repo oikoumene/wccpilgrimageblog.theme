@@ -17,7 +17,8 @@ class homepage_customview(grok.View):
     def contents(self):
         return self.catalog.unrestrictedSearchResults(portal_type='News Item',
                                                         sort_on='created',
-                                                        sort_order='reverse')[:4]
+                                                        sort_order='reverse',
+                                                        review_state='published')[:4]
     
         
     def totalComments(self, context=None):
