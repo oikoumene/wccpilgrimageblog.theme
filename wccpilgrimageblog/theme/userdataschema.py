@@ -14,10 +14,17 @@ from plone.app.users.userdataschema import IUserDataSchemaProvider
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.directives import dexterity, form
 
+# from plone.autoform import directives as form
+from plone.supermodel import model
+from zope import schema
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
+
+from plone.app.textfield import RichText
+from zope.interface import Interface
+from plone.directives import form
 
 
-
-class IEnhancedUserDataSchema(IUserDataSchema):
+class IEnhancedUserDataSchema(IUserDataSchema, form.Schema):
     # ...
     twitter_username = schema.TextLine(
         title=_(u'label_twitter', default=u'Twitter'),
@@ -32,9 +39,22 @@ class IEnhancedUserDataSchema(IUserDataSchema):
                       default=u"A short overview of who you are and what you do. Will be displayed on your author page, linked from the items you create."),
         required=False,
         )
-
-
     
+    # user_biography = RichText(
+    #         title=u"Body text",
+    #         default_mime_type='text/structured',
+    #         output_mime_type='text/html',
+    #         allowed_mime_types=('text/structured', 'text/plain',),
+    #         default=u"Default value"
+    #     )
+    
+
+# class ITestSchema(model.Schema):
+
+#     form.widget('body', WysiwygFieldWidget)
+#     body = schema.Text(title=u"Body text")
+
+
 class UserDataSchemaProvider(object):
     implements(IUserDataSchemaProvider)
 
