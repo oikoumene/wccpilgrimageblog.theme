@@ -404,7 +404,7 @@
                 </div>
             </div>
 
-<div id="author-twitter-feed">joemarie
+<div id="author-twitter-feed">
    <div tal:define="twittername python: mtool.getMemberById(author).getProperty('twitter_username')" tal:condition="twittername">
     <a
     tal:content= "python: 'Tweets by' + twittername "
