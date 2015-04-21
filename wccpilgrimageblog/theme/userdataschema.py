@@ -21,10 +21,12 @@ from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 
 from plone.app.textfield import RichText
 from zope.interface import Interface
-from plone.directives import form
+#from plone.directives import form
+from z3c.form import form
+from plone.app.form.widgets.wysiwygwidget import WYSIWYGWidget
 
 
-class IEnhancedUserDataSchema(IUserDataSchema, form.Schema):
+class IEnhancedUserDataSchema(IUserDataSchema):
     # ...
     twitter_username = schema.TextLine(
         title=_(u'label_twitter', default=u'Twitter'),
@@ -32,7 +34,7 @@ class IEnhancedUserDataSchema(IUserDataSchema, form.Schema):
                       default=u"Enter your Twitter Account"),
         required=False,
         )
-    form.widget(user_biography=WysiwygFieldWidget)
+    #form.widget(user_biography=WysiwygFieldWidget)
     user_biography = schema.Text(
         title=_(u'label_user_biography', default=u'Biography'),
         description=_(u'desc_user_biography',
@@ -66,14 +68,14 @@ class UserDataSchemaProvider(object):
     
 @adapter(Interface, IDefaultBrowserLayer, UserDataPanel)
 class UserDataPanelExtender(extensible.FormExtender):
+    
     def update(self):
-        fields = Fields(
-            IEnhancedUserDataSchema,
-            prefix="IEnhancedUserDataSchema")
+        fields = Fields(IEnhancedUserDataSchema)
         self.add(fields)
         
 @adapter(Interface, IDefaultBrowserLayer, RegistrationForm)
 class RegistrationPanelExtender(extensible.FormExtender):
+    
     def update(self):
         fields = Fields(IEnhancedUserDataSchema)
         #NB: Not omitting the accept field this time, we want people to check it
@@ -84,3 +86,4 @@ class CustomizedUserDataPanel(UserDataPanel):
     def __init__(self, context, request):
         super(CustomizedUserDataPanel, self).__init__(context, request)
         self.form_fields = self.form_fields.omit('description')
+        self.form_fields['user_biography'].custom_widget = WYSIWYGWidget
