@@ -136,7 +136,7 @@
                                           </p>
                                     </div>
                               </div>
-                              <div class="_documentDescription" tal:content="python: mtool.getMemberById(author).getProperty('user_biography')">
+                              <div class="_documentDescription" tal:content="structure python: mtool.getMemberById(author).getProperty('user_biography')">
                                     Author description.
                               </div>
                         </section>
