@@ -9,6 +9,6 @@ class defaultUserNotification(CommentForm):
         super(defaultUserNotification, self).__init__(context, request)
         
 
-@form.default_value(field=IComment['user_notification'])
-def defaultValue(self):
-    return True
+# @form.default_value(field=IComment['user_notification'])
+# def defaultValue(self):
+#     return True
