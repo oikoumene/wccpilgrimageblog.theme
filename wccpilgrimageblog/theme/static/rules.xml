@@ -56,7 +56,7 @@
     </replace>
     
     <!--author view-->
-    <rules css:if-content=".template-author">
+    <rules css:if-content=".template-authors_view">
         <theme href="left-content.html"/>
         <drop css:content="#author-twitter-feed" />
         <drop css:content="#subscribe-rss" />
