@@ -11,4 +11,4 @@ class defaultUserNotification(CommentForm):
 
 @form.default_value(field=IComment['user_notification'])
 def defaultValue(self):
-    return False
+    return True
