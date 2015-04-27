@@ -42,12 +42,12 @@
                     </div>
                 </tal:noAuthor>
                 
-                <tal:haveAuthor condition="python: view.author_data() and isAnon">
+                <tal:haveAuthor condition="python: view.author_data()">
                     
                     <div metal:use-macro="context/global_statusmessage/macros/portal_message">
                         Portal status message
                     </div>
-                    <div id="content" tal:condition="isAnon">
+                    <div id="content">
                         <div id="content-core">
                             <!-- Author information -->
                             <section class="author-prof-wrapper">

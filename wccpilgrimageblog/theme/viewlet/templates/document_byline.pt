@@ -16,14 +16,13 @@
     <span class="documentAuthor">
       <tal:i18n i18n:translate="label_by_author">
       by
-      <a href="#"
+      <!--<a href="#"
          tal:condition="not: isAnon"
          tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${creator_id}"
          tal:content="viewlet/authorname"
          tal:omit-tag="python:viewlet.author() is None"
-         i18n:name="author">Roland Barthes</a>
+         i18n:name="author">Roland Barthes</a>-->
       <a href="#"
-         tal:condition="isAnon"
          tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/authors_view?id=${creator_id}"
          tal:content="viewlet/authorname"
          tal:omit-tag="python:viewlet.author() is None"
