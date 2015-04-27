@@ -61,7 +61,7 @@
                                         <p class="documentFirstHeading" tal:condition="python: author_info['fullname']" tal:content="python: author_info['fullname'].title()">
                                             Author name
                                         </p>
-                                        <p class="documentFirstHeading" tal:condition="python: not author_info['fullname']" tal:content="python: author['id']">
+                                        <p class="documentFirstHeading" tal:condition="python: not author_info['fullname']" tal:content="python: author_info['id']">
                                             Author ID
                                         </p>
                                         
