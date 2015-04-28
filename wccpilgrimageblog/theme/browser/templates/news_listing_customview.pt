@@ -39,12 +39,12 @@
                         <p class="post_author">
                                 <tal:name tal:condition="item_creator"
                                 tal:define="author python:pas_member.info(item_creator)">
-                                    <a tal:condition="not:isAnon" href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
+                                    <!--<a tal:condition="not:isAnon" href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
                                        tal:content="author/name_or_id"
                                        tal:omit-tag="not:author">
                                       Author Name
-                                    </a>
-                                    <a tal:condition="isAnon" href="#" tal:attributes="href string:${navigation_root_url}/authors_view?id=${item_creator}"
+                                    </a>-->
+                                    <a href="#" tal:attributes="href string:${navigation_root_url}/authors_view?id=${item_creator}"
                                        tal:content="author/name_or_id"
                                        tal:omit-tag="not:author">
                                       Author Name
