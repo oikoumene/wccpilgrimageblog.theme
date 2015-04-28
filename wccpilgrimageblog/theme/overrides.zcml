@@ -14,4 +14,10 @@
           for="Products.CMFCore.interfaces.ISiteRoot"
           factory=".adapter.EnhancedUserDataSchemaAdapter"
           />
+    
+    <subscriber
+        for="plone.app.discussion.interfaces.IComment
+           zope.app.container.interfaces.IObjectAddedEvent"
+        handler=".custom_email_notification.notify_user"        
+        />
 </configure>
