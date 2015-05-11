@@ -7525,12 +7525,13 @@ footer {
 #anon-personalbar {
   margin-top: 5px; }
   #anon-personalbar a {
-    border-left: 1px solid #fff;
-    padding: 0 5px;
     display: block;
     float: left; }
-  #anon-personalbar a:first-child {
-    border-left: none; }
+  #anon-personalbar a:after {
+    content: "|";
+    margin: 0 5px; }
+  #anon-personalbar a:last-child:after {
+    content: " "; }
   #anon-personalbar #personaltools-login_facebook {
     text-indent: -9999px;
     background: url(../images/fb-login-button.png) 5px center no-repeat transparent;
