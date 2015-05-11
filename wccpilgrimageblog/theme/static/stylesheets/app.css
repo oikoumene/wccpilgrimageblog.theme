@@ -7521,6 +7521,21 @@ footer {
 #formfield-form-widgets-user_notification {
   display: none; }
 
+/*login*/
+#anon-personalbar {
+  margin-top: 5px; }
+  #anon-personalbar a {
+    border-left: 1px solid #fff;
+    padding: 0 5px;
+    display: block;
+    float: left; }
+  #anon-personalbar a:first-child {
+    border-left: none; }
+  #anon-personalbar #personaltools-login_facebook {
+    text-indent: -9999px;
+    background: url(../images/fb.png) 5px center no-repeat transparent;
+    width: 77px; }
+
 @media only screen and (min-width:64.063em) {
   #main-header {
     height: 250px;
