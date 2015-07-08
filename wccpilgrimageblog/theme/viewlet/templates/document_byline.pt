@@ -7,7 +7,8 @@
       <img tal:replace="structure lock_icon" />
   </span>
 
-  <tal:creator tal:define="creator_short_form viewlet/creator;"
+  <tal:creator tal:define="creator_short_form viewlet/creator;
+                           isAnon context/@@plone_portal_state/anonymous;"
                tal:condition="creator_short_form">
   <tal:name tal:define="creator_long_form string:?author=${creator_short_form};
                         creator_is_openid python:'/' in creator_short_form;
@@ -15,8 +16,14 @@
     <span class="documentAuthor">
       <tal:i18n i18n:translate="label_by_author">
       by
-      <a href="#"
+      <!--<a href="#"
+         tal:condition="not: isAnon"
          tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/author/${creator_id}"
+         tal:content="viewlet/authorname"
+         tal:omit-tag="python:viewlet.author() is None"
+         i18n:name="author">Roland Barthes</a>-->
+      <a href="#"
+         tal:attributes="href string:${context/@@plone_portal_state/navigation_root_url}/authors_view?id=${creator_id}"
          tal:content="viewlet/authorname"
          tal:omit-tag="python:viewlet.author() is None"
          i18n:name="author">Roland Barthes</a>

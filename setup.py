@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.5'
+version = '1.1.1'
 
 setup(name='wccpilgrimageblog.theme',
       version=version,
@@ -34,7 +34,8 @@ setup(name='wccpilgrimageblog.theme',
           # 'plone.app.multilingual',
           # 'plone.multilingualbehavior',
           'z3c.jbot',
-          'ftw.avatar'
+          'ftw.avatar',
+          'collective.easytemplate'
           # -*- Extra requirements: -*-
       ],
       extras_require={
