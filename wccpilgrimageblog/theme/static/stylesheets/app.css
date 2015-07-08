@@ -7534,7 +7534,7 @@ footer {
     content: " "; }
   #anon-personalbar #personaltools-login_facebook {
     text-indent: -9999px;
-    background: url(../images/fb-login-button.png) 5px center no-repeat transparent;
+    background: url(../images/fb-login-button.png) top center no-repeat transparent;
     width: 77px; }
 
 @media only screen and (min-width:64.063em) {
@@ -8592,7 +8592,7 @@ table.listing tbody tr.odd.error td, tr.error {
 body.template-logged_out #content, body.template-login_form #content, .pb-ajax #login-form {
   text-align: center; }
 
-#fieldset-openid-login input, #login-form input {
+#fieldset-openid-login input, #login-form input, #login-form .button {
   font-size: 150%; }
 
 body.template-register #content input, body.template-new-user #content input {
