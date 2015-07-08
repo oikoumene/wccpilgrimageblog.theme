@@ -7537,6 +7537,12 @@ footer {
     background: url(../images/fb-login-button.png) top center no-repeat transparent;
     width: 77px; }
 
+div.overlay .formControls .button {
+  display: inline; }
+
+#login-form .button {
+  font-size: 150%; }
+
 @media only screen and (min-width:64.063em) {
   #main-header {
     height: 250px;
@@ -8176,7 +8182,7 @@ div.overlaybg div.close, div.overlay div.close {
   -webkit-box-shadow: 0 0 3em #666; }
 
 .pb-ajax > div {
-  width: 92%;
+  /*width: 92%;*/
   padding: 1em; }
 
 .pb-ajax .documentActions {
@@ -8592,7 +8598,7 @@ table.listing tbody tr.odd.error td, tr.error {
 body.template-logged_out #content, body.template-login_form #content, .pb-ajax #login-form {
   text-align: center; }
 
-#fieldset-openid-login input, #login-form input, #login-form .button {
+#fieldset-openid-login input, #login-form input {
   font-size: 150%; }
 
 body.template-register #content input, body.template-new-user #content input {
