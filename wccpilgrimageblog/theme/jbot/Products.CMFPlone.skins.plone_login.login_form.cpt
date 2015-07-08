@@ -199,7 +199,7 @@
                                value="Log in"
                                i18n:attributes="value label_log_in;"
                                />
-			<a tal:attributes="href string:${context/portal_url}/@@facebook-login" id="personaltools-login_facebook">Log in with Facebook</a>
+			<a class="button" tal:attributes="href string:${context/portal_url}/@@facebook-login" id="personaltools-login_facebook">Log in with Facebook</a>
                     </div>
 
                 </div>
