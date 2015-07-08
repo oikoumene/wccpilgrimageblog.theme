@@ -7537,11 +7537,17 @@ footer {
     background: url(../images/fb-login-button.png) top center no-repeat transparent;
     width: 77px; }
 
-div.overlay .formControls .button {
-  display: inline; }
+.facebook-login-wrapper a {
+  font-size: 150%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  background-color: #4e69a2; }
+.facebook-login-wrapper a:hover {
+  background-color: #334c83; }
 
-#login-form .button {
-  font-size: 150%; }
+div.overlay .facebook-login-wrapper a:hover {
+  color: #fff;
+  background-color: #334c83; }
 
 @media only screen and (min-width:64.063em) {
   #main-header {
