@@ -7528,11 +7528,12 @@ footer {
     display: block;
     float: left; }
   #anon-personalbar a:after {
-    content: "|";
+    /*content: "|";*/
     margin: 0 5px; }
   #anon-personalbar a:last-child:after {
     content: " "; }
   #anon-personalbar #personaltools-login_facebook {
+    display: none;
     text-indent: -9999px;
     background: url(../images/fb-login-button.png) top center no-repeat transparent;
     width: 77px; }
