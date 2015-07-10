@@ -47,6 +47,14 @@
         class=".commentextender.defaultUserNotification"
         permission="cmf.SetOwnProperties"
     />
+    
+    <browser:page
+        for="Products.CMFPlone.Portal.PloneSite"
+        name="register"
+        class=".register.ExtendRegistrationForm"
+        permission="zope.Public"
+        template='registration_form.pt'
+    />
 
     <!-- -*- extra stuff goes here -*- -->
 
