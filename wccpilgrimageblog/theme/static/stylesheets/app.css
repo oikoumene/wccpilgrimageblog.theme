@@ -7527,8 +7527,8 @@ footer {
   #anon-personalbar a {
     display: block;
     float: left; }
-  #anon-personalbar a:after {
-    /*content: "|";*/
+  #anon-personalbar a#personaltools-login:after {
+    content: "|";
     margin: 0 5px; }
   #anon-personalbar a:last-child:after {
     content: " "; }
