@@ -35,7 +35,9 @@ setup(name='wccpilgrimageblog.theme',
           # 'plone.multilingualbehavior',
           'z3c.jbot',
           'ftw.avatar',
-          'collective.easytemplate'
+          'collective.easytemplate',
+          'quintagroup.formlib.captcha',
+          'quintagroup.z3cform.captcha',
           # -*- Extra requirements: -*-
       ],
       extras_require={
