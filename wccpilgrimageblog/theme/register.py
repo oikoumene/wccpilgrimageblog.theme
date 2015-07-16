@@ -7,9 +7,11 @@ from zope.formlib import form
 from zope.component import getUtility, getAdapter
 from Products.CMFCore.interfaces import ISiteRoot
 from zope.component import getMultiAdapter
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 class ExtendRegistrationForm(RegistrationForm):
     implements(IExtendRegistrationForm)
+    template = ViewPageTemplateFile('registration_form.pt')
     
     @property
     def form_fields(self):
