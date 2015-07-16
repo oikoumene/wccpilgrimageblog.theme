@@ -15,7 +15,7 @@
     <metal:body fill-slot="body">
 
         <div id="content">
-            <tal:mailhost tal:condition="view/showForm2">
+            <tal:mailhost tal:condition="view/showForm">
                 <div metal:use-macro="context/base-pageform.html/form">
                    <tal:came_from metal:fill-slot="extra_info">
                      <input tal:define="came_from request/form/came_from|nothing"
@@ -24,6 +24,9 @@
                             name="came_from"
                             tal:attributes="value came_from" />
                    </tal:came_from>
+                </div>
+                <div class="facebook-login-wrapper" tal:condition="context/@@plone_portal_state/anonymous">
+                    <a class="button" tal:attributes="href string:${context/portal_url}/@@facebook-login" id="personaltools-login_facebook"><i class="fa fa-facebook-square"></i>   Log in with Facebook</a>
                 </div>
             </tal:mailhost>
 
