@@ -5,16 +5,36 @@
       lang="en"
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
-<body>
 
+<metal:styleslot fill-slot='style_slot'>
+      <style type="text/css" media="all">
+        .documentAuthor{display:None;}
+        #documentAuthor1{font-size: 95%;
+          color: #333;}
+      </style>
+</metal:styleslot>
+<body>
 <metal:content-core fill-slot="content-core">
     <metal:block define-macro="content-core"
           tal:define="kssClassesView context/@@kss_field_decorator_view;
                       getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;
                       templateId template/getId;
                       text python:context.CookedBody(stx_level=2);
-                      len_text python:len(text.strip())">
-
+                      len_text python:len(text.strip());
+                      pas_member context/@@pas_member;
+                      navigation_root_url context/@@plone_portal_state/navigation_root_url;
+                      item_creators python: context.Creators()"
+                      >
+  <div id="plone-document-byline" class="documentByLine">
+    by<tal:name tal:repeat="creator item_creators">
+        <element tal:define="author python:pas_member.info(creator)">
+          <a href="#" tal:attributes="href string:${navigation_root_url}/author/${creator}"
+             tal:content="author/name_or_id"
+             tal:omit-tag="not:author">
+          </a><a tal:condition="python: creator != item_creators[-1]">, </a>
+        </element>
+      </tal:name>
+  </div>
         <div class="newsImageContainer"
              tal:condition="context/getImage|nothing">
             <a href="#"
