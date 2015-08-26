@@ -17,12 +17,12 @@
             <tal:block tal:define="pas_member context/@@pas_member;
                                    brains view/contents;
                                    toLocalizedTime nocall: context/@@plone/toLocalizedTime;
-                                   navigation_root_url context/@@plone_portal_state/navigation_root_url;
-                                   isAnon context/@@plone_portal_state/anonymous;" tal:condition="brains">
+                                   navigation_root_url context/@@plone_portal_state/navigation_root_url;" tal:condition="brains">
                   <tal:entry tal:repeat="item brains">
                         <div class="tileItem visualIEFloatFix"
                            tal:define="item_object item/_unrestrictedGetObject;
                                        item_creator item/Creator;
+                                       item_creators item/listCreators;
                                        item_modified item/ModificationDate;
                                        item_title_or_id item/pretty_title_or_id;
                                        item_description item/Description;
@@ -38,22 +38,16 @@
                                                  Item Title
                                           </a>
                                     </h3>
-                                    <p class="post_author" tal:define="author python:pas_member.info(item_creator)">
-                                          <!--<tal:name tal:condition="python: item_creator and not isAnon"
-                                                tal:define="author python:pas_member.info(item_creator)">
-                                              <a href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
-                                                 tal:content="author/name_or_id"
-                                                 tal:omit-tag="not:author">
-                                                Author Name
-                                              </a>
-                                          </tal:name>-->
-                                          <tal:name tal:condition="python: item_creator">
-                                              <a href="#" tal:attributes="href string:${navigation_root_url}/authors_view?id=${item_creator}"
-                                                 tal:content="author/name_or_id"
-                                                 tal:omit-tag="not:item_creator">
-                                                Author Name
-                                              </a>
-                                          </tal:name>
+                                    <p class="post_author">
+                                      <tal:name tal:condition="item_creator"
+                                             tal:repeat="creator item_creators">
+                                        <element tal:define="author python:pas_member.info(creator)">
+                                          <a href="#" tal:attributes="href string:${navigation_root_url}/author/${creator}"
+                                             tal:content="author/name_or_id"
+                                             tal:omit-tag="not:author">
+                                          </a><a tal:condition="python: creator != item_creators[-1]">, </a>
+                                        </element>
+                                      </tal:name>
                                     </p>
                                     <div class="row">
                                           
@@ -90,22 +84,16 @@
                                                  Item Title
                                           </a>
                                     </h2>
-                                    <p class="post_author" tal:define="author python:pas_member.info(item_creator)">
-                                           <!--<tal:name tal:condition="python: item_creator and not isAnon"
-                                                tal:define="author python:pas_member.info(item_creator)">
-                                              <a href="#" tal:attributes="href string:${navigation_root_url}/author/${item_creator}"
-                                                 tal:content="author/name_or_id"
-                                                 tal:omit-tag="not:author">
-                                                Author Name
-                                              </a>
-                                           </tal:name>-->
-                                          <tal:name tal:condition="python: item_creator">
-                                              <a href="#" tal:attributes="href string:${navigation_root_url}/authors_view?id=${item_creator}"
-                                                 tal:content="author/name_or_id"
-                                                 tal:omit-tag="not:item_creator">
-                                                Author Name
-                                              </a>
-                                          </tal:name>     
+                                    <p class="post_author">
+                                      <tal:name tal:condition="item_creator"
+                                             tal:repeat="creator item_creators">
+                                        <element tal:define="author python:pas_member.info(creator)">
+                                          <a href="#" tal:attributes="href string:${navigation_root_url}/author/${creator}"
+                                             tal:content="author/name_or_id"
+                                             tal:omit-tag="not:author">
+                                          </a><a tal:condition="python: creator != item_creators[-1]">, </a>
+                                        </element>
+                                      </tal:name>
                                     </p>
                                     <div class="row">
                                       <div class="large-4 columns">
