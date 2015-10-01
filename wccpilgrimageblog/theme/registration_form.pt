@@ -5,23 +5,11 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 <head>
-  <!-- <script src="http://malsup.github.com/jquery.form.js"></script> -->
-  <script>
-    b.extend({handleError: function( e, xhr, "error", D ) {
-        if ( e.error )
-            e.error( xhr, "error", D );
-        else if(xhr.responseText)
-            console.log(xhr.responseText);
-    }
-});
-
-  </script>
     <metal:block fill-slot="top_slot"
                  tal:define="dummy python:request.set('disable_border',1);
                              disable_column_one python:request.set('disable_plone.leftcolumn',1);
                              disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
 </head>
-
 <body>
     <metal:body fill-slot="body">
       <!-- this will hide the foundation js and app js on rules.xml -->
