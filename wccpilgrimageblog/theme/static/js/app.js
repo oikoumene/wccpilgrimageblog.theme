@@ -1,3 +1,6 @@
-$(document).ready(function () {
+<script>
+$(function() {
   $(document).foundation();
 });
+</script>
+
