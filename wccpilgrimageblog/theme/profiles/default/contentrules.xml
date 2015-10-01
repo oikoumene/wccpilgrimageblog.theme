@@ -12,9 +12,6 @@
     </condition>
     </conditions>
   <actions>
-   <action type="plone.actions.Workflow">
-    <property name="transition">submit</property>
-   </action>
    <action type="collective.easytemplate.actions.Mail">
     <property name="source"/>
     <property
