@@ -80,6 +80,8 @@
     
     <drop theme="/html/body/script | /html/body/link" />
     <after css:theme-children="body" css:if-not-content=".ajax_load">
+        <script src="++theme++wccpilgrimageblog.theme/js/jquery.min.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script>
         <script src="++theme++wccpilgrimageblog.theme/js/foundation.min.js"></script>
         <script src="++theme++wccpilgrimageblog.theme/js/app.js"></script>
         <xsl:copy-of css:select="#portal-footer-wrapper > div > script" />
