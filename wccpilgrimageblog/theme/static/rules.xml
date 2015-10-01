@@ -84,5 +84,8 @@
         <script src="++theme++wccpilgrimageblog.theme/js/app.js"></script>
         <xsl:copy-of css:select="#portal-footer-wrapper > div > script" />
     </after>
+    <after css:theme-children="body">
+        <xsl:copy-of css:select="#portal-footer-wrapper > div > script" />
+    </after>
         
 </rules>
