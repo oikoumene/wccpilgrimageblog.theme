@@ -1,6 +1,5 @@
-<script>
-$(function() {
-  $(document).foundation();
+$(document).ready(function() {
+   $(function() {
+     $(document).foundation();
+   })
 });
-</script>
-
