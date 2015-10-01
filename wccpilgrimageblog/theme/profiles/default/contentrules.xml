@@ -7,7 +7,7 @@
     <conditions>
             <condition type="plone.conditions.PortalType">
                 <property name="check_types">
-                    <element>Comment</element>
+                    <element>Discussion Item</element>
                 </property>
     </condition>
     </conditions>
