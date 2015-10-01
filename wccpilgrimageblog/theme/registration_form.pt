@@ -13,7 +13,8 @@
 
 <body>
     <metal:body fill-slot="body">
-
+      <!-- this will hide the foundation js and app js on rules.xml -->
+      <div id="register_on_click"></div>
         <div id="content">
             <tal:mailhost tal:condition="view/showForm">
                 <div metal:use-macro="context/base-pageform.html/form">
