@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts" meta_type="JavaScripts Registry">
 	
-    <javascript id="++resource++plone.app.jquery.js" expression="not: request/HTTP_X_THEME_ENABLED | nothing" />
+    <!--<javascript id="++resource++plone.app.jquery.js" expression="not: request/HTTP_X_THEME_ENABLED | nothing" />-->
     <javascript id="modernizr.js" expression="not: request/HTTP_X_THEME_ENABLED | nothing" />
 
     <!-- -*- extra stuff goes here -*- -->
-    <javascript
+    <!--<javascript
             id="++theme++wccpilgrimageblog.theme/js/jquery.js"
             cacheable="True" compression="none"
             cookable="False" enabled="True"
@@ -16,7 +16,7 @@
             cacheable="False" compression="none"
             cookable="False" enabled="True"
             expression="request/HTTP_X_THEME_ENABLED | nothing"
-            inline="False" insert-before="++resource++plone.app.jquery.js"/>
+            inline="False" insert-before="++resource++plone.app.jquery.js"/>-->
     <javascript
             id="++theme++wccpilgrimageblog.theme/js/modernizr.js"
             cacheable="True" compression="none"
