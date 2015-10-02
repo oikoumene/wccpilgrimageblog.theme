@@ -36,8 +36,8 @@ setup(name='wccpilgrimageblog.theme',
           'z3c.jbot',
           'ftw.avatar',
           'collective.easytemplate',
+          'quintagroup.captcha.core',
           'quintagroup.formlib.captcha',
-          'quintagroup.z3cform.captcha',
           # -*- Extra requirements: -*-
       ],
       extras_require={
