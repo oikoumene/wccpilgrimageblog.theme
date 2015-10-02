@@ -16,10 +16,8 @@ class ExtendRegistrationForm(RegistrationForm):
     @property
     def form_fields(self):
         my_fields = super(ExtendRegistrationForm, self).form_fields
-        
         my_fields += form.Fields(ICaptchaSchema)
         my_fields['captcha'].custom_widget = CaptchaWidget
-        
         return my_fields
     
     @property
