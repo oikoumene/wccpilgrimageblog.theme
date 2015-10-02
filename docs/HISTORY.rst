@@ -1,5 +1,9 @@
 Changelog
 =========
+1.1.4 - (2 Oct 2015)
+_____________________
+- fixed registration issue
+
 1.1.3 - (1 Oct 2015)
 _____________________
 - added content rule and fixed bugs
