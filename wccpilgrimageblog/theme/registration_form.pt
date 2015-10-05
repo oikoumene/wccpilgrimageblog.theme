@@ -48,10 +48,10 @@
                     i18n:translate=""
                     tal:content="view/label" />
 
-                <h4 class="documentDescription subheader">
+                <div class="documentDescription">
                     This site doesn't have a valid email setup, so you
                     cannot register at this time.
-                </h4>
+                </div>
 
             </tal:nomailhost>
         </div>
