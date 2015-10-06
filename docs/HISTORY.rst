@@ -1,5 +1,9 @@
 Changelog
 =========
+1.1.5 - (6 Oct 2015)
+_____________________
+- customized registration issue and removed footer jbot code
+
 1.1.4 - (2 Oct 2015)
 _____________________
 - fixed registration issue
