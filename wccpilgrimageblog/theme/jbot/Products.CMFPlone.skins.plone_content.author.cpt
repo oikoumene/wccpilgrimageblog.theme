@@ -254,7 +254,7 @@
                     </tal:mailsetup>
 
                     <!-- listing of content created by this user -->
-                    <tal:authorContent define="author_content python:context.portal_catalog.searchResults(dict(Creator=author, sort_on='created', sort_order='reverse', sort_limit=4, portal_type='News Item', review_state='published'))[:4];"
+                    <tal:authorContent define="author_content python:context.portal_catalog.searchResults(dict(listCreators=author, sort_on='created', sort_order='reverse', sort_limit=4, portal_type='News Item', review_state='published'))[:4];"
                                        condition="author_content">
 
                         <h2 i18n:translate="heading_author_content">
@@ -262,33 +262,7 @@
                         </h2>
 
                         <div metal:define-macro="user_content_listing">
-                        <!--<table class="vertical listing"
-                               summary="Lists content written by an author grouped by content type"
-                               i18n:attributes="summary summary_author_content_list;">
-                            <tal:repeat repeat="item author_content">
-                                <tr tal:condition="python: item.portal_type not in ['Discussion Item',]">
-                                    <th tal:define="toLocalizedTime nocall: context/@@plone/toLocalizedTime;"
-                                        tal:content="python:toLocalizedTime(item.Date)"
-                                        style="white-space: nowrap">
-                                        Date
-                                    </th>
-                                    <td>
-                                        <a href="" tal:attributes="href item/getURL"
-                                           tal:content="item/pretty_title_or_id">title</a>
-                                    </td>
-                                    <td>
-                                          <tal:block tal:define="comments python: context.portal_catalog.searchResults(portal_type='Discussion Item', path={'query':item.getPath(), 'depth':2})" tal:condition="comments">
-                                                <tal:if tal:condition="python: len(comments) > 1">
-                                                      <span tal:content="python: str(len(comments))+' Comments'"></span>
-                                                </tal:if>
-                                                <tal:if tal:condition="python: len(comments) <= 1">
-                                                      <span tal:content="python: str(len(comments))+' Comment'"></span>
-                                                </tal:if>
-                                          </tal:block>
-                                    </td>
-                                </tr>
-                            </tal:repeat>
-                        </table>-->
+
                         <tal:entry tal:repeat="item author_content">
                               <div class="tileItem visualIEFloatFix"
                                     tal:define="item_object item/_unrestrictedGetObject;
