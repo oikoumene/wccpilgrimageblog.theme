@@ -28,7 +28,7 @@
   <div id="plone-document-byline" class="documentByLine">
     by<tal:name tal:repeat="creator item_creators">
         <element tal:define="author python:pas_member.info(creator)">
-          <a href="#" tal:attributes="href string:${navigation_root_url}/author/${creator}"
+          <a href="#" tal:attributes="href string:${navigation_root_url}/authors_view?id=${creator}"
              tal:content="author/name_or_id"
              tal:omit-tag="not:author">
           </a><a tal:condition="python: creator != item_creators[-1]">, </a>

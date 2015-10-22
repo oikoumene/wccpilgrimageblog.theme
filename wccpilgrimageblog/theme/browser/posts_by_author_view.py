@@ -25,7 +25,7 @@ class posts_by_author_view(grok.View):
                                                       sort_on='created',
                                                       sort_order='reverse',
                                                       review_state='published',
-                                                      Creator=author)
+                                                      listCreators=author)
         
     
         return results
