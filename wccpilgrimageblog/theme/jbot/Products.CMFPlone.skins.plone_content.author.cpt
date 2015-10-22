@@ -159,7 +159,7 @@
                             your personal information.
                         </p>
                     </tal:noemail>-->
-
+<!-- 
                     <tal:mailsetup tal:condition="python:email_from_address and authorinfo['has_email']">
 
                         <div class="formControls" tal:condition="isAnon">
@@ -172,12 +172,12 @@
                                i18n:attributes="value label_login_to_send_feedback;"
                                />
                         </form>
-                        </div>
+                        </div> -->
 
                         <!-- feedback form -->
 
 
-                        <tal:owner tal:condition="python: not isOwner and not isAnon and member.getProperty('email')">
+                   <!--      <tal:owner tal:condition="python: not isOwner and not isAnon and member.getProperty('email')">
                             <p class="discreet"
                                i18n:translate="description_author_feedback">
                                 If you want to contact this author, fill in the form
@@ -251,10 +251,10 @@
 
                             </form>
                         </tal:owner>
-                    </tal:mailsetup>
+                    </tal:mailsetup> -->
 
                     <!-- listing of content created by this user -->
-                    <tal:authorContent define="author_content python:context.portal_catalog.searchResults(dict(listCreators=author, sort_on='created', sort_order='reverse', sort_limit=4, portal_type='News Item', review_state='published'))[:4];"
+                    <tal:authorContent define="author_content python:context.portal_catalog.unrestrictedSearchResults(dict(listCreators=author, sort_on='created', sort_order='reverse', sort_limit=4, portal_type='News Item', review_state='published'))[:4];"
                                        condition="author_content">
 
                         <h2 i18n:translate="heading_author_content">
