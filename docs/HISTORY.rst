@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.6dev1 - (23 Oct 2015)
+_____________________
+- fixed insufficient priv error
+
 1.1.6dev0 - (22 Oct 2015)
 _____________________
 - modified author via jbot
