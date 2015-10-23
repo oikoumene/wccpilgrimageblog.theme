@@ -18,16 +18,14 @@ class posts_by_author_view(grok.View):
         results = []
         request = self.request
         author = None
-        if request.form:
-            author = self.authorValue()
-            if author:
-                results = self.catalog.searchResults(portal_type='News Item',
-                                                      sort_on='created',
-                                                      sort_order='reverse',
-                                                      review_state='published',
-                                                      listCreators=author)
-        
-    
+        author = self.authorValue()
+        brains = self.catalog.searchResults(portal_type='News Item',
+                                                  sort_on='created',
+                                                  sort_order='reverse',
+                                                  review_state='published')
+        for brain in brains:
+            if author in brain.listCreators or author == '':
+                results.append(brain)
         return results
     
     def authorValue(self):
