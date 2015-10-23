@@ -16,8 +16,6 @@ class posts_by_author_view(grok.View):
     
     def contents(self):
         results = []
-        request = self.request
-        author = None
         author = self.authorValue()
         brains = self.catalog.searchResults(portal_type='News Item',
                                                   sort_on='created',
