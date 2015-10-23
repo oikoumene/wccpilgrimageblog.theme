@@ -171,7 +171,7 @@
                                         </div>
                                     </tal:entry>
                                 </div>
-                                <p>
+                             <!--    <p>
                                     <a href=""
                                        tal:define="author python: author_info['id']"
                                        tal:attributes="href string:$here_url/search?Creator=${author}&amp;sort_on=created&amp;sort_order=reverse"
@@ -179,7 +179,7 @@
                                         All content created by
                                         <span i18n:name="user" tal:omit-tag="" tal:content="python:author_info['fullname'] or author"/>&hellip;
                                     </a>
-                                </p>
+                                </p> -->
                                 <p tal:define="author python: author_info['id']">
                                     <a tal:attributes="href string:${portal_url}/posts_by_author_view?name=${author}">View All Posts</a>
                                 </p>

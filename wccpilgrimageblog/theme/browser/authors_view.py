@@ -48,7 +48,7 @@ class authors_view(grok.View):
     
     def posts(self, author=None):
         catalog = self.catalog
-        brains = catalog.unrestrictedSearchResults(dict(Creator=author, sort_on='created', sort_order='reverse', sort_limit=4, portal_type='News Item', review_state='published'))[:4]
+        brains = catalog.unrestrictedSearchResults(dict(listCreators=author, sort_on='created', sort_order='reverse', sort_limit=4, portal_type='News Item', review_state='published'))[:4]
         results = []
         for brain in brains:
             obj = brain._unrestrictedGetObject()
