@@ -44,22 +44,23 @@ class authors_view(grok.View):
                     results['twitter'] = author.getProperty('twitter_username')
         return results
                 
-    
-    
     def posts(self, author=None):
         catalog = self.catalog
-        brains = catalog.unrestrictedSearchResults(dict(listCreators=author, sort_on='created', sort_order='reverse', sort_limit=4, portal_type='News Item', review_state='published'))[:4]
+        brains = catalog.unrestrictedSearchResults(dict(sort_on='created', sort_order='reverse', portal_type='News Item', review_state='published'))
         results = []
         for brain in brains:
-            obj = brain._unrestrictedGetObject()
-            data = {}
-            data['creator'] = brain.Creator
-            data['modified'] = brain.modified
-            data['title'] = brain.Title
-            data['description'] = brain.description
-            data['path'] = brain.getPath()
-            data['obj'] = obj
-            results.append(data)
+            if author in brain.listCreators:
+                obj = brain._unrestrictedGetObject()
+                data = {}
+                data['creator'] = brain.listCreators
+                data['modified'] = brain.modified
+                data['title'] = brain.Title
+                data['description'] = brain.description
+                data['path'] = brain.getPath()
+                data['obj'] = obj
+                results.append(data)
+                if len(results) ==4:
+                    break;
         return results
     
     def totalComments(self, context=None):
