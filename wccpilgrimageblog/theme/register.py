@@ -17,7 +17,14 @@ class ExtendRegistrationForm(RegistrationForm):
     def form_fields(self):
         my_fields = super(ExtendRegistrationForm, self).form_fields
         my_fields += form.Fields(ICaptchaSchema)
-        my_fields['captcha'].custom_widget = CaptchaWidget
+        
+        #my_fields.append(form.Fields(ICaptchaSchema)) --> test
+        #my_fields['captcha'].custom_widget = CaptchaWidget
+        
+        for fld in my_fields:
+            if fld.__name__ == 'captcha':
+                
+                fld.field.custom_widget = CaptchaWidget
         return my_fields
     
     @property
