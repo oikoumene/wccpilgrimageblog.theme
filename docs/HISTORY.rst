@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.1.6dev3- (27 Oct 2015)
+_____________________
+- revised captcha field extension
+
 1.1.6dev2 - (23 Oct 2015)
 _____________________
 - fixed latest post link

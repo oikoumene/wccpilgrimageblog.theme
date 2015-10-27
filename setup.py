@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.1.6dev2'
+version = '1.1.6dev3'
 
 setup(name='wccpilgrimageblog.theme',
       version=version,
