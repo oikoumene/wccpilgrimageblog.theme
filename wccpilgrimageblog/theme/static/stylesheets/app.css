@@ -7563,6 +7563,10 @@ div.overlay .facebook-login-wrapper a:hover {
     text-align: right; }
  }
 
+/*social like*/
+#viewlet-social-like {
+  display: block !important; }
+
 /* @group Content Area */
 /* Editor styles */
 #content .discreet, #sidebar .discreet {
