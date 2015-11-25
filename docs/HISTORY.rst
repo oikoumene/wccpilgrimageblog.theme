@@ -1,5 +1,10 @@
 Changelog
 =========
+
+1.1.6dev5 (nov 25 2015
+_____________________
+- applied fix for news item caption width
+
 1.1.6dev4 (nov 20 2015)
 _____________________
 - display social like
