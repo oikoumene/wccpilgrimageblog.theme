@@ -9,6 +9,7 @@ from plone.app.content.browser.interfaces import IFolderContentsView
 from Products.CMFCore.utils import _checkPermission
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import base_hasattr
+from wccpilgrimageblog.theme.interfaces import IProductSpecific
 
 grok.templatedir('templates')
 
@@ -17,6 +18,7 @@ class document_byline(grok.Viewlet):
     grok.require('zope2.View')
     grok.viewletmanager(IBelowContentTitle)
     grok.context(IContentish)
+    grok.layer(IProductSpecific)
     
     
     def show_history(self):
