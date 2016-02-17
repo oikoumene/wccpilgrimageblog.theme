@@ -10,6 +10,7 @@ from Products.CMFCore.utils import _checkPermission
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import base_hasattr
 from wccpilgrimageblog.theme.interfaces import IProductSpecific
+from Acquisition import aq_inner
 
 grok.templatedir('templates')
 
