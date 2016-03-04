@@ -39,6 +39,7 @@
         name="personal-information"
         class=".userdataschema.CustomizedUserDataPanel"
         permission="cmf.SetOwnProperties"
+        layer=".interfaces.IProductSpecific"
     />
 
     <browser:page
@@ -46,6 +47,7 @@
         name="plone.Comment"
         class=".commentextender.defaultUserNotification"
         permission="cmf.SetOwnProperties"
+        layer=".interfaces.IProductSpecific"
     />
     
     <browser:page
@@ -53,6 +55,7 @@
         name="register"
         class=".register.ExtendRegistrationForm"
         permission="zope.Public"
+        layer=".interfaces.IProductSpecific"
     />
 
     <!-- -*- extra stuff goes here -*- -->
