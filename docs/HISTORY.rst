@@ -1,10 +1,6 @@
 Changelog
 =========
 
-1.1.6dev6 - mar 8
----------------------
--commented out browser view directive, specify layer on browser view, added aq_inner, added layer
-
 1.1.6dev5 (nov 25 2015
 _____________________
 - applied fix for news item caption width
