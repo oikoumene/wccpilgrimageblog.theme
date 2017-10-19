@@ -39,7 +39,7 @@
             <p tal:condition="context/translation_date|nothing"
                 i18n:domain="wcc.theme">
                 <i i18n:translate="trans_published_on">Translation published on:</i>
-                <span tal:content="python:toLocalizedTime(context.translation_date)"></span>
+                <span tal:content="python:toLocalizedTime(context.effective_date)"></span>
             </p>
         </tal:block>
         <p tal:define="is_editable context/@@plone_context_state/is_editable"
